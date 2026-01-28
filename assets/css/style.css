@@ -1,0 +1,172 @@
+/* 
+   Project: SereneMeds
+   Description: Custom styles overriding/extending Bootstrap 5.3
+*/
+
+:root {
+  --brand-blue: #008ecc;
+  --brand-dark-blue: #0077b6;
+  --brand-light-blue: #d4f4fa;
+  --brand-teal: #1f9d98;
+  --bg-footer: #caf0f8;
+}
+
+/* --- Typography & Base --- */
+body {
+  font-family:
+    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fallback font stack */
+}
+
+/* --- Helper Classes --- */
+.text-primary {
+  color: var(--brand-blue) !important;
+}
+.bg-primary {
+  background-color: var(--brand-blue) !important;
+}
+.btn-primary {
+  background-color: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+.btn-primary:hover {
+  background-color: #007bb5;
+  border-color: #007bb5;
+}
+
+.text-dark-blue {
+  color: var(--brand-dark-blue) !important;
+}
+.bg-dark-blue {
+  background-color: var(--brand-dark-blue) !important;
+}
+.bg-light-blue {
+  background-color: var(--brand-light-blue) !important;
+}
+.bg-light-footer {
+  background-color: var(--bg-footer) !important;
+}
+
+/* --- Search Bar Styling --- */
+.search-bar-custom .form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6; /* Keep it subtle */
+}
+.search-bar-custom .input-group-text {
+  background-color: #f8f9fa;
+}
+
+/* --- Navigation --- */
+.navbar {
+  min-height: 50px; /* Adjust height as needed */
+}
+
+/* Made font smaller to fit better and reduced padding */
+.navbar-nav .nav-link {
+  font-size: 0.7rem; /* Significantly smaller as requested */
+  letter-spacing: 0.2px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--brand-light-blue) !important;
+}
+
+/* Add vertical line breaks between items */
+@media (min-width: 992px) {
+  .navbar-nav .nav-item:last-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 1.5rem;
+  }
+}
+
+/* --- Upload Section --- */
+.upload-dropzone {
+  border-style: dashed !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.transition-hover {
+  transition: all 0.3s ease;
+}
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+.btn-upload {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* --- Decorative Elements --- */
+/* Rotate utility for icons */
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+/* --- Footer --- */
+.social-icons .btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-dark-blue);
+  border: none;
+}
+.social-icons .btn:hover {
+  background-color: var(--brand-blue);
+}
+
+/* --- Refactored Inline Styles --- */
+
+.logo-main {
+  max-height: 50px;
+}
+
+.icon-cart {
+  height: 28px;
+  width: auto;
+}
+
+.icon-phone {
+  height: 32px;
+  width: auto;
+}
+
+.support-text-sm {
+  font-size: 0.7rem;
+}
+
+.footer-polygon-bg {
+  max-width: 350px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.footer-offset {
+  margin-top: 150px !important; /* Huge margin to allow newsletter to float up */
+}
+
+.newsletter-wrapper {
+  transform: translateY(
+    -50%
+  ); /* Moves the element up by exactly 50% of its height */
+  margin-bottom: -100px; /* Pulls the footer content below it up to close the gap */
+  position: relative;
+  z-index: 10;
+}
+
+.newsletter-card {
+  max-width: 900px;
+}
+
+.newsletter-dot {
+  width: 10px;
+  height: 10px;
+}
+
+.footer-brand-logo {
+  height: 40px;
+}
