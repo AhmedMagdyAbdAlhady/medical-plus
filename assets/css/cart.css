@@ -43,6 +43,8 @@
 }
 .card-item h6{
   color: var(--text-color);
+  font-size: 17px;
+  font-weight: 600;
 }
 .card-item .buttons .remove-btn{
   border-color: var(--border-color);
@@ -72,8 +74,10 @@
   padding-left: 11%;
 }
 .card-item .quantity span{
-  font-size: 11px;
-  padding-left: 61%;
+  font-size: 12px;
+  padding-left: 64%;
+  font-weight: 500;
+  color: var(--text-color);
 }
 .card-item .quantity .form-select{
   width: 148px;
@@ -135,4 +139,30 @@
   background-color: transparent;
   border: 1px solid var(--priamary-color);
   color: var(--priamary-color);
+}
+.features .container{
+  display: flex;
+  gap: 5%;
+  margin-top: -32px;
+}
+.features .container .feature{
+  display: flex;
+  gap: 10px;
+}
+.features .container .feature .image{
+  height: 50px;
+}
+.features .container .feature .image img{
+  width: 30px;
+  padding: 20%;
+  background-color: var(--border-color);
+  border-radius: 15px;
+}
+.features .container .feature h6{
+  font-size: 13px;
+  font-weight: 700;
+}
+.features .container .feature p{
+  font-size: 11px;
+  color: var(--border-color);
 }
