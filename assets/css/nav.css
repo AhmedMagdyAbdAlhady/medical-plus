@@ -1,0 +1,33 @@
+
+/* --- Search Bar Styling --- */
+.search-bar-custom .form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6; /* Keep it subtle */
+}
+.search-bar-custom .input-group-text {
+  background-color: #f8f9fa;
+}
+
+/* --- Navigation --- */
+.navbar {
+  min-height: 50px; /* Adjust height as needed */
+}
+
+/* Made font smaller to fit better and reduced padding */
+.navbar-nav .nav-link {
+  font-size: 0.7rem; /* Significantly smaller as requested */
+  letter-spacing: 0.2px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.navbar-nav .nav-link:hover {
+  color: var(--brand-light-blue) !important;
+}
+
+/* Add vertical line breaks between items */
+@media (min-width: 992px) {
+  .navbar-nav .nav-item:last-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    padding-left: 1.5rem;
+  }
+}
