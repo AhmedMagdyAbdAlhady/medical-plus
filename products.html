@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products | Medicals</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/productsAndCategory.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    
+</head>
+<body>
+<!--
+    ============================================
+    Start Code
+    Mahmoud Mohamed AbdElaal
+    ============================================ 
+-->
+    
+
+    <!-- products Banner -->
+    <section class="category-banner">
+        <div class="container">
+            <h1>products</h1>
+            <div class="banner-underline"></div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="container py-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Products</li>
+            </ol>
+        </nav>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-md-4 mb-4">
+                <div class="sidebar">
+                    <!-- Category Filter - Accordion -->
+                    <div class="filter-section">
+                        <h5 class="filter-title">Category</h5>
+                        <div class="accordion accordion-category" id="categoryAccordion">
+                            <!-- Beauty Care -->
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#beautyCollapse" aria-expanded="false" aria-controls="beautyCollapse">
+                                        <i class="fas fa-chevron-right"></i> Beauty Care
+                                    </button>
+                                </h6>
+                                <div id="beautyCollapse" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat1a">
+                                            <label class="form-check-label" for="cat1a">Skincare</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat1b">
+                                            <label class="form-check-label" for="cat1b">Hair Care</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat1c">
+                                            <label class="form-check-label" for="cat1c">Cosmetics</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sports Nutrition -->
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sportsCollapse" aria-expanded="false" aria-controls="sportsCollapse">
+                                        <i class="fas fa-chevron-right"></i> Sports Nutrition
+                                    </button>
+                                </h6>
+                                <div id="sportsCollapse" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat2a">
+                                            <label class="form-check-label" for="cat2a">Protein Powder</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat2b">
+                                            <label class="form-check-label" for="cat2b">Energy Drinks</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat2c">
+                                            <label class="form-check-label" for="cat2c">Supplements</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Nutrition & Supplements -->
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#nutritionCollapse" aria-expanded="false" aria-controls="nutritionCollapse">
+                                        <i class="fas fa-chevron-right"></i> Nutrition & Supplements
+                                    </button>
+                                </h6>
+                                <div id="nutritionCollapse" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat3a">
+                                            <label class="form-check-label" for="cat3a">Vitamins</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat3b">
+                                            <label class="form-check-label" for="cat3b">Minerals</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat3c">
+                                            <label class="form-check-label" for="cat3c">Herbal Supplements</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Home Healthcare -->
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#healthcareCollapse" aria-expanded="false" aria-controls="healthcareCollapse">
+                                        <i class="fas fa-chevron-right"></i> Home Healthcare
+                                    </button>
+                                </h6>
+                                <div id="healthcareCollapse" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat4a">
+                                            <label class="form-check-label" for="cat4a">Blood Pressure Monitor</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat4b">
+                                            <label class="form-check-label" for="cat4b">Glucose Meter</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat4c">
+                                            <label class="form-check-label" for="cat4c">Thermometer</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Personal Care -->
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#personalCollapse" aria-expanded="false" aria-controls="personalCollapse">
+                                        <i class="fas fa-chevron-right"></i> Personal Care
+                                    </button>
+                                </h6>
+                                <div id="personalCollapse" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat5a">
+                                            <label class="form-check-label" for="cat5a">Oral Care</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat5b">
+                                            <label class="form-check-label" for="cat5b">Bath & Body</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat5c">
+                                            <label class="form-check-label" for="cat5c">Deodorants</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Medicines -->
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#medicinesCollapse" aria-expanded="true" aria-controls="medicinesCollapse">
+                                        <i class="fas fa-chevron-right"></i> Medicines
+                                    </button>
+                                </h6>
+                                <div id="medicinesCollapse" class="accordion-collapse collapse show" data-bs-parent="#categoryAccordion">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat6a" checked>
+                                            <label class="form-check-label" for="cat6a">Self Medications</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat6b">
+                                            <label class="form-check-label" for="cat6b">Kids & Infants Medications</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat6c">
+                                            <label class="form-check-label" for="cat6c">Prescription Medicines</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mother & Baby Care -->
+                            <div class="accordion-item">
+                                <h6 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#motherCollapse" aria-expanded="false" aria-controls="motherCollapse">
+                                        <i class="fas fa-chevron-right"></i> Mother & Baby Care
+                                    </button>
+                                </h6>
+                                <div id="motherCollapse" class="accordion-collapse collapse" data-bs-parent="#categoryAccordion">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat8a">
+                                            <label class="form-check-label" for="cat8a">Baby Diapers</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat8b">
+                                            <label class="form-check-label" for="cat8b">Baby Formula</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="cat8c">
+                                            <label class="form-check-label" for="cat8c">Maternity Care</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-section">
+                        <h5 class="filter-title">Brand</h5>
+                        <div class="filter-options">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand1">
+                                <label class="form-check-label" for="brand1">Abbott</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand2">
+                                <label class="form-check-label" for="brand2">GSK</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand3" checked>
+                                <label class="form-check-label" for="brand3">Getz</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand4">
+                                <label class="form-check-label" for="brand4">Homeopathy</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand5">
+                                <label class="form-check-label" for="brand5">Unilever</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="brand6">
+                                <label class="form-check-label" for="brand6">Mankind</label>
+                            </div>
+                        </div>
+                        <a href="#" class="see-all-link">See all</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Section -->
+            <div class="col-lg-9 col-md-8">
+                <!-- Sort Options -->
+                <div class="sort-section mb-4">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <label for="sortSelect" class="me-2">Featured</label>
+                            <select class="form-select form-select-sm d-inline-block w-auto" id="sortSelect">
+                                <option>Featured</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <button class="btn btn-sm btn-outline-secondary me-2"><i class="fas fa-th"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary"><i class="fas fa-list"></i></button>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="row g-4">
+                    <!-- Product Card 1 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product1.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product2.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product3.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product4.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product1.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product2.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 7 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product3.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 8 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product4.png" alt="Brufen 100mg / 5ml Syrup">
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Medicines</p>
+                                <h6 class="product-name">Brufen 100mg / 5ml Syrup</h6>
+                                <p class="product-price">PKR 15.50</p>
+                                <button class="btn btn-add-cart"><i class="fas fa-shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--
+    ============================================
+    End Code
+    Mahmoud Mohamed AbdElaal
+    ============================================ 
+-->
+
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
