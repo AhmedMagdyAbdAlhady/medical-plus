@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medical Plus - Your Trusted Online Pharmacy" />
+    <meta name="keywords" content="Medical, Pharmacy, Online Medicine, Health Products" />
+    <meta name="author" content="Medical Plus" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <title>Medical Plus|Product Details</title>
+    <!-- normalize css -->
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/footer.css">
+    <link rel="stylesheet" href="./assets/css/product.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+
+<body>
+    <!-- =======================================================
+         START HEADER SECTION
+         Includes: Logo, Search Bar, User Actions, Main Navigation
+    ======================================================== -->
+    <header class="bg-white">
+        <!-- Top Bar: Logo, Search, Actions -->
+        <div class="container py-3">
+            <div class="row align-items-center g-3">
+                <!-- Logo Section -->
+                <div class="col-6 col-lg-3">
+                    <a href="/index.html" class="d-block">
+                        <img src="./assets/images/logo.png" alt="SereneMeds Logo" class="img-fluid logo-main" />
+                    </a>
+                </div>
+
+                <!-- Search Bar (Hidden on small mobile, visible on md+) -->
+                <div class="col-12 col-lg-5 order-3 order-lg-2">
+                    <div class="input-group search-bar-custom">
+                        <span class="input-group-text bg-light border-end-0 rounded-start-pill text-muted">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text" class="form-control bg-light border-start-0 border-end-0"
+                            placeholder="Search for products" />
+                        <button class="btn btn-primary rounded-end-pill px-4" type="button">
+                            Search
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions (Cart, Account, Support) -->
+                <div class="col-6 col-lg-4 order-2 order-lg-3">
+                    <div class="d-flex justify-content-end align-items-center gap-3">
+                        <!-- Cart Icon with Badge -->
+                        <a href="/cart.html"
+                            class="position-relative text-dark me-2 d-flex align-items-center text-decoration-none">
+                            <img src="./assets/images/carty.png" alt="Cart" class="icon-cart" />
+                        </a>
+
+                        <!-- Language & Account -->
+                        <div class="d-none d-md-flex align-items-center gap-3">
+                            <a href="#" class="text-decoration-none text-secondary fw-bold text-sm">EN <i
+                                    class="fas fa-chevron-down small"></i></a>
+                            <a href="#" class="text-decoration-none text-primary fw-medium"><i
+                                    class="far fa-user me-1"></i> My Account</a>
+                        </div>
+
+                        <!-- Support Number (Desktop only) -->
+                        <div class="d-none d-xl-flex align-items-center text-end lh-1">
+                            <img src="./assets/images/phone-call.png" alt="Call Us" class="me-2 icon-phone" />
+                            <div>
+                                <small class="text-muted d-block support-text-sm">Sales & Service Support</small>
+                                <span class="fw-bold text-dark">021 344 1122</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu (Dark Strip) -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue py-0">
+            <div class="container">
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler py-1 my-2" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span> <small>Menu</small>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <!-- Adjusted classes: small font, justified content, bold -->
+                    <ul class="navbar-nav w-100 justify-content-between text-uppercase small fw-bold">
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html">Beauty Care</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html">Sports Nutrition</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html">Nutrition Supplements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html">Home Healthcare</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html">Mother & Baby Care</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html">Personal Care</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html">Medicines</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white py-2" href="/category.html"><i
+                                    class="fas fa-asterisk me-1"></i> Shop By Brands</a>
+                        </li>
+                        <li class="nav-item border-0">
+                            <a class="nav-link text-white py-2" href="/category.html"><i class="fas fa-tag me-1"></i>
+                                Offers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- End Header Section -->
+    <!-- Page Title -->
+    <section class="py-4 header">
+        <div class="container">
+            <h2 class="fw-bold">Products</h2>
+            <span class="underline"></span>
+        </div>
+    </section>
+    <!-- End Page Title -->
+    <!--start contant page -->
+    <div class="container py-4 product-page">
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-custom mb-4">
+            Home > Medicines > Eyes, Nose & Ears >
+            <span>Polyfax Eye Ointment</span>
+        </div>
+
+        <!-- Product Section -->
+        <div class="row g-5 border-bottom pb-4 ">
+
+            <!-- Image -->
+            <div class="col-md-5 text-center">
+                <div class="product-image">
+                    <img src="./assets/images/products/product5.png" alt="Polyfax Eye Ointment" class="img-fluid">
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="col-md-7 d-flex flex-column justify-content-evenly">
+                <div class=" position-relative">
+
+                    <h4 class="product-title">
+                        Brufen 120ml 100mg suspension
+                    </h4>
+
+                    <p class="brand">
+                        Brand: <span>Abbott Laboratories (Pak) Ltd</span>
+                    </p>
+                    <span class="price-badge position-absolute top-0 end-0 px-4 border border-2">Rs. 102.43</span>
+
+                </div>
+
+
+                <div class="info-section mt-3">
+                    <h6>Used For:</h6>
+                    <ul>
+                        <li>Pain & Fever Relief</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h6>How it works:</h6>
+                    <ul>
+                        <li> It relieves pain and reduces inflammation (swelling or redness).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h6>Generics:</h6>
+                    <ul>
+                        <li>Ibuprofen</li>
+                    </ul>
+                </div>
+
+                <!-- Cart -->
+                <div class="cart-quantity shadow d-flex justify-content-evenly align-items-center gap-3 mt-4 p-2">
+                    <div class="quantity-box">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+
+                    <button class="btn btn-primary px-5">
+                        <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="mt-4">
+
+            <h6>Precaution</h6>
+            <ul>
+                <li>If you get an infection while taking ibuprofen, tell your doctor.
+                    Ibuprofen may hide signs of infection
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente aut rem, ducimus beatae quaerat
+                    dignissimos eum culpa reprehenderit dolore nam corrupti assumenda totam itaque delectus natus
+                    repudiandae! Esse, cum soluta?.
+                </li>
+            </ul>
+            <h6>Side Effects</h6>
+            <ul>
+                <li> Nausea, vomiting, dizziness, headache, stomach pain, heartburn.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, nisi ullam et minima omnis ab
+                    aut pariatur at quos accusamus, odit mollitia quas, eos sapiente. Nam nihil iusto esse ratione.
+                </li>
+            </ul>
+
+            <h6>Drug Interactions</h6>
+            <ul>
+                <li> Aspirin, anticoagulants, corticosteroids, diuretics.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus a animi voluptate commodi
+                    incidunt omnis, laboriosam inventore sapiente error. Illo atque quo repellat neque! Minus dolores
+                    perspiciatis nam aliquam ipsa?
+                </li>
+            </ul>
+
+            <h6>Indication</h6>
+            <ul>
+                <li> Used to reduce pain, fever and inflammation.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatem deserunt,
+                    necessitatibus ab perferendis magnam iure vitae consequatur, ad provident reiciendis dignissimos
+                    quaerat ut nobis explicabo, aperiam quia labore. Fugit!
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!--End contant page -->
+
+
+    <!-- =======================================================
+         START FOOTER SECTION
+         Includes: Newsletter (overlapping), Links, Social
+    ======================================================== -->
+    <footer class="bg-light-footer pt-5 position-relative footer-offset">
+        <!-- Background Polygon on Left Side -->
+        <img src="./assets/images/bg-polygon 1.png" alt=""
+            class="position-absolute bottom-0 start-0 d-none d-lg-block footer-polygon-bg" />
+
+        <!-- Newsletter Box (Floating overlap) -->
+        <div class="container position-relative z-1 newsletter-wrapper">
+            <div class="bg-white rounded-4 shadow p-4 p-lg-5 text-center mx-auto newsletter-card">
+                <h3 class="fw-bold text-dark-blue mb-2">Join Our Newsletter</h3>
+                <div class="d-flex justify-content-center mb-3">
+                    <span class="bg-primary rounded-circle newsletter-dot"></span>
+                </div>
+                <p class="text-muted mb-4">
+                    Join over half a million vitamin lovers and get our latest deals,
+                    articles, and resources!
+                </p>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="input-group">
+                            <input type="email" class="form-control bg-light border-0 py-3 ps-4"
+                                placeholder="example@example.com" />
+                            <button class="btn btn-primary px-4 fw-bold" type="button">
+                                SUBSCRIBE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Footer Content -->
+        <div class="container pt-5 pb-4 position-relative z-1">
+            <div class="row g-4 text-center text-md-start">
+                <!-- Brand & Social -->
+                <div class="col-lg-4 col-md-6">
+                    <img src="./assets/images/logo.png" alt="SereneMeds" class="mb-3 footer-brand-logo" />
+                    <p class="text-muted small mb-4">
+                        SereneMeds - Corporate Office <br />
+                        Marasi Dr - Business Bay Square
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Who We Are -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold text-dark-blue mb-3">Who We Are</h5>
+                    <ul class="list-unstyled text-muted small lh-lg">
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">About SereneMeds</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Latest News</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Store Locator</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Our Policies -->
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold text-dark-blue mb-3">Our Policies</h5>
+                    <ul class="list-unstyled text-muted small lh-lg">
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Refund Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Shipping Terms</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Terms & Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold text-dark-blue mb-3">Useful Links</h5>
+                    <ul class="list-unstyled text-muted small lh-lg mb-4">
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Browse By Brand</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Browse By Category</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-decoration-none text-muted">Offers/Coupons</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-top border-light-subtle position-relative z-1">
+            <div class="container py-3">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center text-md-start">
+                        <p class="mb-0 small text-muted">
+                            © 2023 SereneMeds. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+</body>
+
+</html>
