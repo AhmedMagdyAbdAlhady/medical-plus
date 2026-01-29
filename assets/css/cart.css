@@ -1,17 +1,17 @@
-:root{
-  --priamary-color:#5dd0e7;
-  --border-color:#e5e8ec;
-  --text-color:#184363;
+:root {
+  --priamary-color: #5dd0e7;
+  --border-color: #e5e8ec;
+  --text-color: #184363;
 }
-.header{
+.header {
   background-color: var(--priamary-color);
   text-align: center;
   color: white;
 }
-.header .container{
+.header .container {
   padding: 2%;
 }
-.header .underline{
+.header .underline {
   border-bottom: 3px solid;
   width: 120px;
   position: relative;
@@ -22,10 +22,10 @@
   font-size: 24px;
   font-weight: 600;
 }
-.card-content{
+.card-content {
   padding-top: 6%;
 }
-.card-content .card-items{
+.card-content .card-items {
   padding: 3%;
 }
 .card-item {
@@ -38,15 +38,15 @@
 .card-item img {
   max-height: 70px;
   object-fit: contain;
-  background-color:var(--border-color) ;
+  background-color: var(--border-color);
   padding: 7%;
 }
-.card-item h6{
+.card-item h6 {
   color: var(--text-color);
   font-size: 17px;
   font-weight: 600;
 }
-.card-item .buttons .remove-btn{
+.card-item .buttons .remove-btn {
   border-color: var(--border-color);
   color: red;
   font-size: 13px;
@@ -54,11 +54,11 @@
   border-radius: 5px;
 }
 .card-item .buttons .remove-btn:hover,
-.card-buttons .remove-btn:hover{
+.card-buttons .remove-btn:hover {
   color: white;
   background-color: red;
 }
-.card-item .buttons .save-btn{
+.card-item .buttons .save-btn {
   border-color: var(--border-color);
   color: var(--priamary-color);
   font-size: 13px;
@@ -66,25 +66,25 @@
   border-radius: 5px;
 }
 .card-item .buttons .save-btn:hover,
-.card-buttons .back-btn:hover{
+.card-buttons .back-btn:hover {
   color: white;
   background-color: var(--priamary-color);
 }
-.card-item .quantity{
+.card-item .quantity {
   padding-left: 11%;
 }
-.card-item .quantity span{
+.card-item .quantity span {
   font-size: 12px;
   padding-left: 64%;
   font-weight: 500;
   color: var(--text-color);
 }
-.card-item .quantity .form-select{
+.card-item .quantity .form-select {
   width: 148px;
   font-size: 11px;
   color: darkgrey;
 }
-.card-buttons .back-btn{
+.card-buttons .back-btn {
   border-color: var(--border-color);
   color: var(--priamary-color);
   font-size: 13px;
@@ -92,7 +92,7 @@
   border-radius: 5px;
 }
 
-.card-buttons .remove-btn{
+.card-buttons .remove-btn {
   border-color: var(--border-color);
   color: var(--priamary-color);
   font-size: 13px;
@@ -100,7 +100,7 @@
   border-radius: 5px;
 }
 /*-----------order-summary-----------*/
-.order-summary .coupon h6{
+.order-summary .coupon h6 {
   font-size: 13px;
   font-weight: 400;
   color: var(--text-color);
@@ -108,61 +108,123 @@
 .order-summary .coupon .input-group input {
   font-size: 15px;
 }
-.order-summary .coupon .input-group button{
+.order-summary .coupon .input-group button {
   width: 35%;
   border-color: var(--border-color);
   font-size: 15px;
 }
-.order-summary .price-details{
+.order-summary .price-details {
   padding: 1.5rem;
 }
-.order-summary .price-details .type{
+.order-summary .price-details .type {
   font-size: 13px;
   color: var(--text-color);
 }
-.order-summary .price-details .amount{
+.order-summary .price-details .amount {
   font-size: 13px;
 }
-.order-summary .price-details .total-amount .total{
+.order-summary .price-details .total-amount .total {
   font-size: 13px;
 }
-.order-summary .price-details .total-amount .amount{
+.order-summary .price-details .total-amount .amount {
   font-size: 15px;
 }
-.order-summary .price-details a{
+.order-summary .price-details a {
   background-color: #184363;
   color: white;
   padding: 4%;
   font-size: 16px;
 }
-.order-summary .price-details a:hover{
+.order-summary .price-details a:hover {
   background-color: transparent;
   border: 1px solid var(--priamary-color);
   color: var(--priamary-color);
 }
-.features .container{
+.features .container {
   display: flex;
   gap: 5%;
   margin-top: -32px;
 }
-.features .container .feature{
+.features .container .feature {
   display: flex;
   gap: 10px;
 }
-.features .container .feature .image{
+.features .container .feature .image {
   height: 50px;
 }
-.features .container .feature .image img{
+.features .container .feature .image img {
   width: 30px;
   padding: 20%;
   background-color: var(--border-color);
   border-radius: 15px;
 }
-.features .container .feature h6{
+.features .container .feature h6 {
   font-size: 13px;
   font-weight: 700;
 }
-.features .container .feature p{
+.features .container .feature p {
   font-size: 11px;
   color: var(--border-color);
+}
+
+/*-------------checkout-design-part--------------*/
+
+/*-------------start-billing-address--------------*/
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+.checkout-content {
+  margin-top: 6%;
+  gap: 10%;
+  justify-content: center;
+}
+.checkout-content .billing-card h5 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6%;
+}
+.checkout-content .billing-card form .form-input {
+  padding: 0%;
+}
+.checkout-content .billing-card form .width {
+  width: 48%;
+}
+.checkout-content .billing-card form .input-fields {
+  gap: 4%;
+}
+/*-------------end-billing-address--------------*/
+/*-------------start-payment-method--------------*/
+.checkout-content .payment-method h5 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6%;
+}
+.checkout-content .payment-method .cash {
+  padding: 1%;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.checkout-content .payment-method .form-check:hover{
+  border-color: #3b82f6;
+  background-color: #f0f6ff;
+}
+
+.checkout-content .payment-method .content:has(.form-check-input:checked) {
+  border-color: #0d6efd;
+  background-color: #f0f7ff;
+  box-shadow: 0 0 0 3px rgba(13,110,253,.2);
+}
+.checkout-content .payment-method .cash label {
+  font-size: 15px;
+  display: flex;
+  gap: 3%;
+  font-weight: 700;
+}
+.checkout-content .payment-method .cash p{
+  font-size: 11px;
+  margin-left: 5%;
+  font-weight: 300;
+  margin-top: 1%;
 }
