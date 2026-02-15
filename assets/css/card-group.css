@@ -1,0 +1,165 @@
+/* Section Header */
+.section-title {
+    color: #003366;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+}
+/* Typography from Product Box.png */
+.category {
+    color: #0081c5;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.product-name {
+    color: #003366;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.price {
+    color: #003366;
+    font-weight: 800;
+    font-size: 16px;
+}
+/* Add to Cart Button Style */
+.add-to-cart {
+    background-color: #eaf3f8;
+    color: #003366;
+    border-radius: 25px;
+    padding: 8px;
+    border: none;
+    width: 100%;
+}
+
+/* Product Card - Matching "Product Box.png" */
+.product-card {
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 51, 102, 0.1);
+}
+
+.img-container {
+    background-color: transparent;
+    height: 140px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d1e9f5;
+    border-radius: 15px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .img-container img {
+    transform: scale(1.05);
+}
+
+/* Responsive Image Container */
+@media (max-width: 575px) {
+    .img-container {
+        height: 180px;
+        padding: 15px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .img-container {
+        height: 160px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .img-container {
+        height: 150px;
+    }
+}
+
+/* Start You May Also Like section styles */
+.also-like .section-title {
+    font-size: 2.25rem;
+    font-weight: 900;
+    color: #003366;
+    margin-bottom: 0.25rem;
+}
+
+.also-like .text-muted {
+    color: #6c8aa0;
+}
+
+.btn-view-all-large {
+    background: #007bbd;
+    color: #fff !important;
+    padding: 10px 28px;
+    border-radius: 28px;
+    font-weight: 700;
+    box-shadow: 0 30px 50px rgba(0, 123, 189, 0.25);
+    border: none;
+}
+
+@media (max-width: 991px) {
+    .btn-view-all-large {
+        box-shadow: 0 20px 30px rgba(0, 123, 189, 0.18);
+        padding: 8px 20px;
+    }
+}
+
+/* Fade animation for tabs */
+.tab-pane.fade {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Category Section - Like Popular Categories.png */
+.categories-section {
+    background-color: #fff;
+}
+
+.category-img-container {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .category-img-container {
+    background-color: #eaf3f8;
+}
+
+.category-simple-icon {
+    font-size: 40px;
+    color: #007bbd;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .category-simple-icon {
+    color: #003366;
+}
+
+.category-count {
+    color: #888;
+    font-size: 12px;
+}
