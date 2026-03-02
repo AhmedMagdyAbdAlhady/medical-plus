@@ -130,7 +130,31 @@
         font-size: 1.8rem;
     }
 }
+/* --- Upload Section --- */
+.upload-dropzone {
+  border-style: dashed !important;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.transition-hover {
+  transition: all 0.3s ease;
+}
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+.btn-upload {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
 
+/* --- Decorative Elements --- */
+/* Rotate utility for icons */
+.rotate-45 {
+  transform: rotate(45deg);
+}
 /* Product Slider Section */
 .product-slider {
     background-color: #ffffff;
