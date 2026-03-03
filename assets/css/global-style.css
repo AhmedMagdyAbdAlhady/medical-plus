@@ -10,6 +10,8 @@
   --brand-light-blue: #d4f4fa;
   --brand-teal: #1f9d98;
   --bg-footer: #caf0f8;
+  --priamary-color: #5dd0e7;
+
 }
 
 /* --- Typography & Base --- */
@@ -82,6 +84,27 @@ body {
   }
 }
 /* End nav bar  */
+/*------Start page-title------- */
+
+.page-title {
+
+    background-color: var(--priamary-color);
+    text-align: center;
+    color: white;
+}
+
+.page-title .container {
+    padding: 2%;
+}
+
+.page-title .underline {
+    border-bottom: 3px solid;
+    width: 120px;
+    position: relative;
+    display: flex;
+    left: 44.5%;
+}
+/*-------End page-title ---------*/
 
 /* Start crad group */
 /* Section Header */

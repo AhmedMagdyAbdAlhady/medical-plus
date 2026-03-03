@@ -22,26 +22,6 @@
     }
 }
 
-/* header */
-
-.header {
-    background-color: var(--priamary-color);
-    text-align: center;
-    color: white;
-}
-
-.header .container {
-    padding: 2%;
-}
-
-.header .underline {
-    border-bottom: 3px solid;
-    width: 120px;
-    position: relative;
-    display: flex;
-    left: 44.5%;
-}
-
 /* Breadcrumb */
 .breadcrumb-custom {
     font-size: 14px;
