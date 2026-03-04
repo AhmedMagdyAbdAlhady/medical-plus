@@ -1,29 +1,4 @@
 /* FAQ Page Styles */
-
-/* Hero Section */
-.faq-hero {
-  background-color: #26c6da; /* Cyan color matching the design */
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.faq-hero .separator {
-  width: 100px;
-  height: 4px;
-  background-color: #fff;
-  border-radius: 2px;
-}
-
-/* Breadcrumb */
-.breadcrumb-item a {
-  color: #6c757d;
-  font-weight: 500;
-}
-
-.breadcrumb-item.active {
-  color: #0277bd !important; /* Darker blue for active item */
-}
-
 /* Contact Form */
 .contact-form .form-control {
   border-radius: 4px;
