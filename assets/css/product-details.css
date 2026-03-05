@@ -69,11 +69,11 @@
 }
 
 /* Info */
-.info-section h6 {
+.info h6 {
     margin-bottom: 4px;
 }
 
-.info-section p {
+.info p {
     font-size: 14px;
     color: #666;
 }
