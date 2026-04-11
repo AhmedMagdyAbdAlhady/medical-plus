@@ -1,3 +1,0 @@
-# medical-plus-
-# this is a ux design figma file
-https://www.figma.com/design/elKZqBK6wtmJMlNC88IT33/E-Commerce-Pharmacy-Template---Free-Figma-Template--Community-?node-id=0-1&p=f&t=3vkn8uZmtQsG0dSH-0
