@@ -66,7 +66,7 @@ medical-plus/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone <https://github.com/AhmedMagdyAbdAlhady/medical-plus.git>
 cd medical-plus
 ```
 
