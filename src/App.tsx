@@ -1,11 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./styles/global.css";
+import AppRouter from "./routes/AppRouter";
+
 function App() {
-  return (
-  <>
-    <h1>Medical Plus</h1>
-    <p>Welcome to Medical Plus, your comprehensive medical application built with React and TypeScript.</p>
-    <p>Explore our features and stay healthy!</p>
-  </>
-  );
+  return <AppRouter />;
 }
 
 export default App;

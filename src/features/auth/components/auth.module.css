@@ -1,0 +1,85 @@
+/* ─── Auth Pages ─────────────────────────────────────────── */
+/* .authSection {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--brand-light-blue);
+  padding: 40px 0;
+} */
+
+.authCard {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.authHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.authHeader h2 {
+  color: var(--brand-dark-blue);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.authHeader p {
+  color: #6c757d;
+}
+
+:global(.form-label) {
+  font-weight: 600;
+  color: var(--brand-dark-blue);
+  margin-bottom: 8px;
+}
+
+:global(.form-control) {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  background-color: #f8f9fa;
+}
+
+:global(.form-control:focus) {
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 0.2rem rgba(0, 142, 204, 0.15);
+  background-color: #fff;
+}
+
+.btnAuth {
+  width: 100%;
+  padding: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.authLinks {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.authLinks a {
+  color: var(--brand-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.authLinks a:hover {
+  color: var(--brand-dark-blue);
+  text-decoration: underline;
+}
+
+/* Signup specific */
+.signupCard {
+  max-width: 600px;
+}
