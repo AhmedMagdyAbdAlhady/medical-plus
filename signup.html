@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign Up for Medical Plus" />
+  <title>Medical Plus | Sign Up</title>
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="./assets/css/normalize.css" />
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- custom global css -->
+  <link rel="stylesheet" href="./assets/css/global-style.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/auth.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+</head>
+
+<body>
+  <!-- Header Section (Copied from index.html) -->
+  <header class="bg-white">
+    <!-- Top Bar: Logo, Search, Actions -->
+    <div class="container py-3">
+      <div class="row align-items-center g-3">
+        <!-- Logo Section -->
+        <div class="col-6 col-lg-3">
+          <a href="/index.html" class="d-block">
+            <img src="./assets/images/logo.png" alt="SereneMeds Logo" class="img-fluid logo-main" />
+          </a>
+        </div>
+
+        <!-- Search Bar (Hidden on small mobile, visible on md+) -->
+        <div class="col-12 col-lg-5 order-3 order-lg-2">
+          <div class="input-group search-bar-custom">
+            <span class="input-group-text bg-light border-end-0 rounded-start-pill text-muted">
+              <i class="fas fa-search"></i>
+            </span>
+            <input type="text" class="form-control bg-light border-start-0 border-end-0"
+              placeholder="Search for products" />
+            <button class="btn btn-primary rounded-end-pill px-4" type="button">
+              Search
+            </button>
+          </div>
+        </div>
+
+        <!-- User Actions (Cart, Account, Support) -->
+        <div class="col-6 col-lg-4 order-2 order-lg-3">
+          <div class="d-flex justify-content-end align-items-center gap-3">
+            <!-- Cart Icon with Badge -->
+            <a href="/cart.html"
+              class="position-relative text-dark me-2 d-flex align-items-center text-decoration-none">
+              <img src="./assets/images/carty.png" alt="Cart" class="icon-cart" />
+            </a>
+
+            <!-- Language & Account -->
+            <div class="d-none d-md-flex align-items-center gap-3">
+              <a href="#" class="text-decoration-none text-secondary fw-bold text-sm">EN <i
+                  class="fas fa-chevron-down small"></i></a>
+              <a href="#" class="text-decoration-none text-primary fw-medium"><i class="far fa-user me-1"></i> My
+                Account</a>
+            </div>
+
+            <!-- Support Number (Desktop only) -->
+            <div class="d-none d-xl-flex align-items-center text-end lh-1">
+              <img src="./assets/images/phone-call.png" alt="Call Us" class="me-2 icon-phone" />
+              <div>
+                <small class="text-muted d-block support-text-sm">Sales & Service Support</small>
+                <span class="fw-bold text-dark">021 344 1122</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Menu (Dark Strip) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue py-0">
+      <div class="container">
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler py-1 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span> <small>Menu</small>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav w-100 justify-content-between text-uppercase small fw-bold">
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Beauty Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Sports Nutrition</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Nutrition Supplements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Home Healthcare</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Mother & Baby Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Personal Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Medicines</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html"><i class="fas fa-asterisk me-1"></i> Shop By
+                Brands</a>
+            </li>
+            <li class="nav-item border-0">
+              <a class="nav-link text-white py-2" href="/category.html"><i class="fas fa-tag me-1"></i> Offers</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Signup Section -->
+  <section class="auth-section">
+    <div class="container">
+      <div class="auth-card signup-card">
+        <div class="auth-header">
+          <h2>Create Account</h2>
+          <p>Join us to get the best medical products</p>
+        </div>
+
+        <form action="#">
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="John Doe" required />
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="phone" placeholder="+20 123 456 7890" required />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Create a password" required />
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password"
+                required />
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <label for="location" class="form-label">Location</label>
+            <select class="form-select text-muted" id="location" required>
+              <option selected disabled value="">
+                Choose your location...
+              </option>
+              <option value="Cairo">Cairo</option>
+              <option value="Alexandria">Alexandria</option>
+              <option value="Giza">Giza</option>
+              <option value="Mansoura">Mansoura</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-check mb-4">
+            <input class="form-check-input" type="checkbox" id="terms" required />
+            <label class="form-check-label small" for="terms">
+              I agree to the
+              <a href="#" class="text-primary">Terms & Conditions</a> and
+              <a href="#" class="text-primary">Privacy Policy</a>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-auth text-white">
+            Sign Up
+          </button>
+
+          <div class="auth-links">
+            <p class="mb-0">
+              Already have an account? <a href="login.html">Login</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (Copied from index.html) -->
+  <footer class="bg-light-footer pt-5 position-relative footer-offset">
+    <!-- Background Polygon -->
+    <img src="./assets/images/bg-polygon 1.png" alt=""
+      class="position-absolute bottom-0 start-0 d-none d-lg-block footer-polygon-bg" />
+
+    <!-- Newsletter Box -->
+    <div class="container position-relative z-1 newsletter-wrapper">
+      <div class="bg-white rounded-4 shadow p-4 p-lg-5 text-center mx-auto newsletter-card">
+        <h3 class="fw-bold text-dark-blue mb-2">Join Our Newsletter</h3>
+        <div class="d-flex justify-content-center mb-3">
+          <span class="bg-primary rounded-circle newsletter-dot"></span>
+        </div>
+        <p class="text-muted mb-4">
+          Join over half a million vitamin lovers and get our latest deals!
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="input-group">
+              <input type="email" class="form-control bg-light border-0 py-3 ps-4" placeholder="example@example.com" />
+              <button class="btn btn-primary px-4 fw-bold" type="button">
+                SUBSCRIBE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="container pt-5 pb-4 position-relative z-1">
+      <div class="row g-4 text-center text-md-start">
+        <div class="col-lg-4 col-md-6">
+          <img src="./assets/images/logo.png" alt="SereneMeds" class="mb-3 footer-brand-logo" />
+          <p class="text-muted small mb-4">
+            SereneMeds - Corporate Office <br />
+            Marasi Dr - Business Bay Square
+          </p>
+          <div class="social-icons">
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="fw-bold text-dark-blue mb-3">Who We Are</h5>
+          <ul class="list-unstyled text-muted small lh-lg">
+            <li>
+              <a href="#" class="text-decoration-none text-muted">About SereneMeds</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Contact Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Latest News</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Store Locator</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="fw-bold text-dark-blue mb-3">Our Policies</h5>
+          <ul class="list-unstyled text-muted small lh-lg">
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Refund Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Shipping Terms</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="fw-bold text-dark-blue mb-3">Useful Links</h5>
+          <ul class="list-unstyled text-muted small lh-lg mb-4">
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Browse By Brand</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Browse By Category</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Offers/Coupons</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-top border-light-subtle position-relative z-1">
+      <div class="container py-3">
+        <div class="row align-items-center">
+          <div class="col-12 text-center text-md-start">
+            <p class="mb-0 small text-muted">
+              © 2023 SereneMeds. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- bootstrap js -->
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

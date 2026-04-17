@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Medical Plus - FAQ & Contact Us" />
+  <title>Medical Plus | FAQ</title>
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="./assets/css/normalize.css" />
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- custom global css -->
+  <link rel="stylesheet" href="./assets/css/global-style.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/faq.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+</head>
+
+<body>
+  <!-- =======================================================
+        START HEADER SECTION
+        Includes: Logo, Search Bar, User Actions, Main Navigation
+    ======================================================== -->
+  <header class="bg-white">
+    <!-- Top Bar: Logo, Search, Actions -->
+    <div class="container py-3">
+      <div class="row align-items-center g-3">
+        <!-- Logo Section -->
+        <div class="col-6 col-lg-3">
+          <a href="/index.html" class="d-block">
+            <img src="./assets/images/logo.png" alt="SereneMeds Logo" class="img-fluid logo-main" />
+          </a>
+        </div>
+
+        <!-- Search Bar (Hidden on small mobile, visible on md+) -->
+        <div class="col-12 col-lg-5 order-3 order-lg-2">
+          <div class="input-group search-bar-custom">
+            <span class="input-group-text bg-light border-end-0 rounded-start-pill text-muted">
+              <i class="fas fa-search"></i>
+            </span>
+            <input type="text" class="form-control bg-light border-start-0 border-end-0"
+              placeholder="Search for products" />
+            <button class="btn btn-primary rounded-end-pill px-4" type="button">
+              Search
+            </button>
+          </div>
+        </div>
+
+        <!-- User Actions (Cart, Account, Support) -->
+        <div class="col-6 col-lg-4 order-2 order-lg-3">
+          <div class="d-flex justify-content-end align-items-center gap-3">
+            <!-- Cart Icon with Badge -->
+            <a href="/cart.html"
+              class="position-relative text-dark me-2 d-flex align-items-center text-decoration-none">
+              <img src="./assets/images/carty.png" alt="Cart" class="icon-cart" />
+            </a>
+
+            <!-- Language & Account -->
+            <div class="d-none d-md-flex align-items-center gap-3">
+              <a href="#" class="text-decoration-none text-secondary fw-bold text-sm">EN <i
+                  class="fas fa-chevron-down small"></i></a>
+              <a href="#" class="text-decoration-none text-primary fw-medium"><i class="far fa-user me-1"></i> My
+                Account</a>
+            </div>
+
+            <!-- Support Number (Desktop only) -->
+            <div class="d-none d-xl-flex align-items-center text-end lh-1">
+              <img src="./assets/images/phone-call.png" alt="Call Us" class="me-2 icon-phone" />
+              <div>
+                <small class="text-muted d-block support-text-sm">Sales & Service Support</small>
+                <span class="fw-bold text-dark">021 344 1122</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Menu (Dark Strip) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue py-0">
+      <div class="container">
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler py-1 my-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+          <span class="navbar-toggler-icon"></span> <small>Menu</small>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <!-- Adjusted classes: small font, justified content, bold -->
+          <ul class="navbar-nav w-100 justify-content-between text-uppercase small fw-bold">
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Beauty Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Sports Nutrition</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Nutrition Supplements</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Home Healthcare</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Mother & Baby Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Personal Care</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html">Medicines</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link text-white py-2" href="/category.html"><i class="fas fa-asterisk me-1"></i> Shop By
+                Brands</a>
+            </li>
+            <li class="nav-item border-0">
+              <a class="nav-link text-white py-2" href="/category.html"><i class="fas fa-tag me-1"></i> Offers</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End Header Section -->
+  <!-- Page Title -->
+  <section class="page-title py-4">
+    <div class="container py-4 ">
+      <h2 class="fw-bold">FAQS</h2>
+      <span class="underline"></span>
+    </div>
+  </section>
+  <!-- End Page Title -->
+       <!--Start Breadcrumb -->
+    <section class="breadcrumb-nav  py-3">
+        <div class="container">
+            <nav aria-label="breadcrumb"
+                style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Contact us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+  <!-- Contact Form Section -->
+  <section class="contact py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form class="contact-form">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <input type="text" class="form-control py-3 bg-light border-light-subtle" placeholder="Full Name" />
+              </div>
+              <div class="col-md-6">
+                <input type="email" class="form-control py-3 bg-light border-light-subtle" placeholder="Email" />
+              </div>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control py-3 bg-light border-light-subtle" placeholder="Subject" />
+            </div>
+            <div class="mb-4">
+              <textarea class="form-control py-3 bg-light border-light-subtle" rows="6"
+                placeholder="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary px-4 py-2 fw-bold text-uppercase">
+              Submit Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Information Section -->
+  <section class="contact-info py-5 bg-white mb-5">
+    <div class="container">
+      <h2 class="text-center fw-bold text-dark-blue mb-4">
+        Contact Information
+      </h2>
+      <div class="row g-4 justify-content-center">
+        <!-- Contact Details Side (Moved Above Map) -->
+        <div class="col-md-10 col-lg-8">
+          <div class="contact-card bg-white border rounded-4 p-4 text-center shadow-sm">
+            <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 gap-md-5">
+              <div>
+                <p class="mb-1 text-muted small uppercase fw-bold">Email</p>
+                <p class="mb-0 fw-bold text-dark-blue fs-5">
+                  info@serenemeds.com
+                </p>
+              </div>
+              <div class="d-none d-md-block border-end align-self-stretch mx-2"></div>
+              <!-- Vertical Divider -->
+              <div>
+                <p class="mb-1 text-muted small uppercase fw-bold">Phone</p>
+                <p class="mb-0 fw-bold text-dark-blue fs-5">(972) 532-7473</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Side -->
+        <div class="col-md-10 col-lg-8">
+          <div class="map-container rounded-4 overflow-hidden shadow-sm position-relative">
+            <!-- Use a static map image if available, else a placeholder -->
+            <img src="./assets/images/map-placeholder.png" alt="Map Location" class="img-fluid w-100 object-fit-cover"
+              style="height: 350px" />
+            <!-- Overlay card -->
+            <div class="map-overlay-card position-absolute top-0 start-0 m-3 bg-white p-3 rounded shadow-sm"
+              style="max-width: 200px">
+              <p class="mb-1 fw-bold small">16610 Dallas Pkwy</p>
+              <p class="mb-2 text-muted x-small">
+                16610 Dallas Pkwy, Dallas, TX 75248, USA
+              </p>
+              <a href="#" class="text-primary x-small text-decoration-none">View larger map</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================
+         START FOOTER SECTION
+    ======================================================== -->
+  <footer class="bg-light-footer pt-5 position-relative footer-offset">
+    <!-- Background Polygon on Left Side -->
+    <img src="./assets/images/bg-polygon 1.png" alt=""
+      class="position-absolute bottom-0 start-0 d-none d-lg-block footer-polygon-bg" />
+
+    <!-- Newsletter Box (Floating overlap) -->
+    <div class="container position-relative z-1 newsletter-wrapper">
+      <div class="bg-white rounded-4 shadow p-4 p-lg-5 text-center mx-auto newsletter-card">
+        <h3 class="fw-bold text-dark-blue mb-2">Join Our Newsletter</h3>
+        <div class="d-flex justify-content-center mb-3">
+          <span class="bg-primary rounded-circle newsletter-dot"></span>
+        </div>
+        <p class="text-muted mb-4">
+          Join over half a million vitamin lovers and get our latest deals,
+          articles, and resources!
+        </p>
+
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="input-group">
+              <input type="email" class="form-control bg-light border-0 py-3 ps-4" placeholder="example@example.com" />
+              <button class="btn btn-primary px-4 fw-bold" type="button">
+                SUBSCRIBE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="container pt-5 pb-4 position-relative z-1">
+      <div class="row g-4 text-center text-md-start">
+        <!-- Brand & Social -->
+        <div class="col-lg-4 col-md-6">
+          <img src="./assets/images/logo.png" alt="SereneMeds" class="mb-3 footer-brand-logo" />
+          <p class="text-muted small mb-4">
+            SereneMeds - Corporate Office <br />
+            Marasi Dr - Business Bay Square
+          </p>
+          <div class="social-icons">
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="btn btn-dark rounded-circle btn-sm me-1"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Who We Are -->
+        <div class="col-lg-2 col-md-6">
+          <h5 class="fw-bold text-dark-blue mb-3">Who We Are</h5>
+          <ul class="list-unstyled text-muted small lh-lg">
+            <li>
+              <a href="#" class="text-decoration-none text-muted">About SereneMeds</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Contact Us</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Latest News</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Store Locator</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Our Policies -->
+        <div class="col-lg-2 col-md-6">
+          <h5 class="fw-bold text-dark-blue mb-3">Our Policies</h5>
+          <ul class="list-unstyled text-muted small lh-lg">
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Refund Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Shipping Terms</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="fw-bold text-dark-blue mb-3">Useful Links</h5>
+          <ul class="list-unstyled text-muted small lh-lg mb-4">
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Browse By Brand</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Browse By Category</a>
+            </li>
+            <li>
+              <a href="#" class="text-decoration-none text-muted">Offers/Coupons</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-top border-light-subtle position-relative z-1">
+      <div class="container py-3">
+        <div class="row align-items-center">
+          <div class="col-12 text-center text-md-start">
+            <p class="mb-0 small text-muted">
+              © 2023 SereneMeds. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer Section -->
+
+  <!-- bootstrap js -->
+  <script src="./assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
