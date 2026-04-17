@@ -1,0 +1,34 @@
+/* ─── Footer ────────────────────────────────────────────── */
+.social-icons .btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--brand-dark-blue);
+  border: none;
+}
+.social-icons .btn:hover {
+  background-color: var(--brand-blue);
+}
+
+.footer-polygon-bg {
+  max-width: 350px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.footer-offset {
+  margin-top: 150px !important;
+}
+
+.newsletter-wrapper {
+  transform: translateY(-50%);
+  margin-bottom: -100px;
+  position: relative;
+  z-index: 10;
+}
+
+.newsletter-card { max-width: 900px; }
+.newsletter-dot  { width: 10px; height: 10px; }
+.footer-brand-logo { height: 40px; }

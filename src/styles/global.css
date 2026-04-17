@@ -1,0 +1,49 @@
+/*
+   Project: SereneMeds (React)
+   Global styles – brand tokens + Bootstrap overrides
+*/
+
+/* ─── Brand Tokens ─────────────────────────────────────── */
+:root {
+  --brand-blue: #008ecc;
+  --brand-dark-blue: #0077b6;
+  --brand-light-blue: #d4f4fa;
+  --brand-teal: #1f9d98;
+  --bg-footer: #caf0f8;
+}
+
+/* ─── Base Typography ───────────────────────────────────── */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ─── Bootstrap Color Overrides ────────────────────────── */
+.text-primary  { color: var(--brand-blue) !important; }
+.bg-primary    { background-color: var(--brand-blue) !important; }
+.btn-primary   { background-color: var(--brand-blue); border-color: var(--brand-blue); }
+.btn-primary:hover { background-color: #007bb5; border-color: #007bb5; }
+
+.text-dark-blue  { color: var(--brand-dark-blue) !important; }
+.bg-dark-blue    { background-color: var(--brand-dark-blue) !important; }
+.bg-light-blue   { background-color: var(--brand-light-blue) !important; }
+.bg-light-footer { background-color: var(--bg-footer) !important; }
+
+/* ─── Utility Helpers ──────────────────────────────────── */
+.upload-dropzone  { border-style: dashed !important; }
+.cursor-pointer   { cursor: pointer; }
+.transition-hover { transition: all 0.3s ease; }
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+.btn-upload { font-size: 1rem; letter-spacing: 1px; }
+.rotate-45  { transform: rotate(45deg); }
+/* content section background */
+.content-section-bg {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--brand-light-blue);
+  padding: 40px 0;
+}
