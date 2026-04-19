@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import type { ContactFormData } from "../../types/auth.types";
 import { isValidEmail, isRequired, minLength } from "../../utils/validators";
 import styles from "./faq.module.css";
-
 type ContactErrors = Partial<Record<keyof ContactFormData, string>>;
 
 const FAQ: React.FC = () => {
@@ -106,7 +105,6 @@ const FAQ: React.FC = () => {
             <hr className="mt-2 text-muted-light" />
           </nav>
         </div>
-
         {/* ── Contact Form ── */}
         <section className="contact-section py-5">
           <div className="container">

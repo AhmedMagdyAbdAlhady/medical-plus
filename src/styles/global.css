@@ -10,6 +10,18 @@
   --brand-light-blue: #d4f4fa;
   --brand-teal: #1f9d98;
   --bg-footer: #caf0f8;
+  --primary-color: #0891B2;
+  --secondary-color: #06B6D4;
+  --dark-navy: #001F3F;
+  --light-gray: #EDF4F6;
+  --border-color: #E0E0E0;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-light: #999999;
+  --white: #FFFFFF;
+  --success-color: #10B981;
+  --warning-color: #F59E0B;
+
 }
 
 /* ─── Base Typography ───────────────────────────────────── */
@@ -18,27 +30,68 @@ body {
 }
 
 /* ─── Bootstrap Color Overrides ────────────────────────── */
-.text-primary  { color: var(--brand-blue) !important; }
-.bg-primary    { background-color: var(--brand-blue) !important; }
-.btn-primary   { background-color: var(--brand-blue); border-color: var(--brand-blue); }
-.btn-primary:hover { background-color: #007bb5; border-color: #007bb5; }
+.text-primary {
+  color: var(--brand-blue) !important;
+}
 
-.text-dark-blue  { color: var(--brand-dark-blue) !important; }
-.bg-dark-blue    { background-color: var(--brand-dark-blue) !important; }
-.bg-light-blue   { background-color: var(--brand-light-blue) !important; }
-.bg-light-footer { background-color: var(--bg-footer) !important; }
+.bg-primary {
+  background-color: var(--brand-blue) !important;
+}
+
+.btn-primary {
+  background-color: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+
+.btn-primary:hover {
+  background-color: #007bb5;
+  border-color: #007bb5;
+}
+
+.text-dark-blue {
+  color: var(--brand-dark-blue) !important;
+}
+
+.bg-dark-blue {
+  background-color: var(--brand-dark-blue) !important;
+}
+
+.bg-light-blue {
+  background-color: var(--brand-light-blue) !important;
+}
+
+.bg-light-footer {
+  background-color: var(--bg-footer) !important;
+}
 
 /* ─── Utility Helpers ──────────────────────────────────── */
-.upload-dropzone  { border-style: dashed !important; }
-.cursor-pointer   { cursor: pointer; }
-.transition-hover { transition: all 0.3s ease; }
+.upload-dropzone {
+  border-style: dashed !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.transition-hover {
+  transition: all 0.3s ease;
+}
+
 .transition-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.8) !important;
 }
-.btn-upload { font-size: 1rem; letter-spacing: 1px; }
-.rotate-45  { transform: rotate(45deg); }
+
+.btn-upload {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
 /* content section background */
 .content-section-bg {
   min-height: 80vh;

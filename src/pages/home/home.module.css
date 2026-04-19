@@ -1,0 +1,106 @@
+.heroSection {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #a7ebf9 0%, #a7ebf9 100%);
+    overflow: hidden;
+    padding: 60px 0;
+}  
+/* Background Decorations */
+.shape {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.circle1 {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    top: 5%;
+    left: 3%;
+}
+
+.circle2 {
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: -80px;
+    left: 40%;
+}
+
+.circle3 {
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    bottom: 5%;
+    left: 45%;
+} 
+/* Typography Styles */
+.subHeadline {
+    font-weight: 400;
+    color: #0077B6;
+    letter-spacing: 5px;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+}
+
+.mainHeadline {
+    font-weight: 800;
+    color: #002366;
+    font-size: 4.5em;
+    line-height: 1;
+}
+
+.tagline {
+    color: #0077B6;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.shortLine {
+    width: 150px;
+    border: 1px solid #002366;
+    opacity: 0.8;
+    margin: 20px 0;
+}
+
+.availability {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Button Design */
+.btnDiscount {
+    background-color: #00004d;
+    color: white;
+    font-weight: 700;
+    padding: 12px 30px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btnDiscount:hover {
+    background-color: #0077B6;
+
+    color: white;
+    transform: scale(1.05);
+}
+
+.btnDiscount:active, .btnDiscount:focus, .btnDiscount:visited {
+    outline: none;
+}
+.heroImg {
+    max-width: 90%;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+    .mainHeadline {
+        font-size: 3rem;
+    }}

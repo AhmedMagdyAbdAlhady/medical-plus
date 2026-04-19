@@ -7,6 +7,7 @@ import Footer from "../layouts/footer/Footer";
 const Login = lazy(() => import("../pages/auth/Login"));
 const Signup = lazy(() => import("../pages/auth/Signup"));
 const FAQ = lazy(() => import("../pages/faq/FAQ"));
+const HOME = lazy(() => import("../pages/home/home"));
 
 /* ─── Loading fallback ──────────────────────────────────────────────────── */
 const PageSpinner: React.FC = () => (
@@ -62,6 +63,16 @@ const AppRouter: React.FC = () => {
               </>
             }
           />
+          <Route
+            path="/home"
+            element={
+              <>
+                <Header />
+                <HOME />
+                <Footer />
+              </>
+            }
+          />
 
           {/* Catch-all → redirect to login for now */}
           <Route
@@ -69,7 +80,7 @@ const AppRouter: React.FC = () => {
             element={
               <>
                 <Header />
-                <Login />
+                <FAQ />
                 <Footer />
               </>
             }
