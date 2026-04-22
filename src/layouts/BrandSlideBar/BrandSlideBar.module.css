@@ -1,0 +1,114 @@
+/* Logo Carousel Section */
+.logoSlider {
+    background-color: #f8fbfd;
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+.logo-carousel-wrapper {
+    position: relative;
+    padding: 10px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logoRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    min-width: 100%;
+}
+
+.logoItem {
+    flex: 0 0 auto;
+    width: 130px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.logoImg {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.logoImg:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Logo Carousel - Smooth animation */
+.logo-carousel .carousel-item {
+    min-height: 90px;
+}
+
+.logo-carousel .carousel-item.active {
+    display: flex;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Ensure logo row displays properly */
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Logo Navigation - Far from logos */
+.logoNav {
+    width: 40px;
+    height: 40px;
+    background: transparent !important;
+    border-radius: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    position: absolute;
+    z-index: 10;
+}
+
+.carousel-control-prev.logo-nav {
+    left: -50px;
+}
+
+.carousel-control-next.logo-nav {
+    right: -50px;
+}
+
+/* Hide default Bootstrap icons for logo carousel */
+.logo-nav .carousel-control-prev-icon,
+.logo-nav .carousel-control-next-icon {
+    background-image: none !important;
+    display: none !important;
+}
+
+.logoNavIcon {
+    color: #003366;
+    font-size: 20px;
+}
+
+/* Remove Logo Dots - indicators */
+.logo-dots {
+    display: none !important;
+}

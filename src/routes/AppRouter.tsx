@@ -80,7 +80,7 @@ const AppRouter: React.FC = () => {
             element={
               <>
                 <Header />
-                <FAQ />
+                <HOME />
                 <Footer />
               </>
             }

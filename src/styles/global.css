@@ -100,3 +100,10 @@ body {
   background-color: var(--brand-light-blue);
   padding: 40px 0;
 }
+/* .bg-img-none { background-image: none !important; } */
+.section-title {
+    color: #003366;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+}

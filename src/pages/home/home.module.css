@@ -5,7 +5,8 @@
     background: linear-gradient(135deg, #a7ebf9 0%, #a7ebf9 100%);
     overflow: hidden;
     padding: 60px 0;
-}  
+}
+
 /* Background Decorations */
 .shape {
     position: absolute;
@@ -38,7 +39,8 @@
     border-radius: 50%;
     bottom: 5%;
     left: 45%;
-} 
+}
+
 /* Typography Styles */
 .subHeadline {
     font-weight: 400;
@@ -92,15 +94,157 @@
     transform: scale(1.05);
 }
 
-.btnDiscount:active, .btnDiscount:focus, .btnDiscount:visited {
+.btnDiscount:active,
+.btnDiscount:focus,
+.btnDiscount:visited {
     outline: none;
 }
+
 .heroImg {
     max-width: 90%;
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.1));
 }
 
+/* Strat Instant Pharmacy */
+/* Product Slider Section */
+.productSlider {
+    background-color: #ffffff;
+    padding: 40px 0;
+}
+
+.productSlider .d-flex {
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.productSlider .container {
+    max-width: 1400px;
+    padding: 0 20px;
+}
+
+.deliveryNote {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+/* Section Header */
+.sectionTitle {
+    color: #003366;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.productSlider .text-muted {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #6c757d !important;
+}
+
+.btnViewAll {
+    background-color: #007bbd;
+    color: white;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 0.85rem;
+    padding: 8px 20px;
+    border: none;
+}
+
+.btnViewAll:hover {
+    background-color: #005a8e;
+    color: white;
+}
+
+/* Carousel Container */
+.pharmacyCarousel {
+    position: relative;
+    padding: 10px 50px;
+
+    /* Carousel Navigation - Outside cards */
+   .customNav
+      {
+        background: black;
+        width: 40px;
+        height: 40px;
+        background: #eaf3f8;
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 1;
+        position: absolute;
+        z-index: 10;
+    }
+
+    /* Hide default Bootstrap carousel icons */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-image: none !important;
+        display: none !important;
+    }
+
+    /* Custom nav icon */
+    .navIcon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #003366;
+        font-size: 14px;
+        display: block;
+    }
+
+    /* Carousel Dots */
+    .customDots {
+        bottom: -40px;
+    }
+
+    .customDots button {
+        width: 8px !important;
+        height: 8px !important;
+        border-radius: 50%;
+        background-color: #d1e9f5 !important;
+        border: none !important;
+    }
+
+    .customDots button.active {
+        background-color: #007bbd !important;
+    }
+    /* Carousel Grid - Single Row with Horizontal Scroll */
+    .carousel-item .row {
+        flex-wrap: nowrap !important;
+        margin: 0;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #d1e9f5 transparent;
+    }
+
+    .carousel-item .row::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    .carousel-item .row::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .carousel-item .row::-webkit-scrollbar-thumb {
+        background-color: #d1e9f5;
+        border-radius: 3px;
+    }
+
+    .carousel-item .col-12 {
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+}
+
 @media (max-width: 768px) {
     .mainHeadline {
         font-size: 3rem;
-    }}
+    }
+}
