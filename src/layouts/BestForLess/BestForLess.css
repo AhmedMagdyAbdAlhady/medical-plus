@@ -18,7 +18,12 @@
     font-weight: 700;
     box-shadow: 0 30px 50px rgba(0, 123, 189, 0.25);
     border: none;
+    &:hover {
+        background-color: #005f8a;
+        box-shadow: 0 40px 60px rgba(0, 123, 189, 0.35);
+    }
 }
+
 
 @media (max-width: 991px) {
     .btn-view-all-large {

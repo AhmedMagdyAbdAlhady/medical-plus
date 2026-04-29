@@ -2,6 +2,8 @@ import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "../layouts/header/Header";
 import Footer from "../layouts/footer/Footer";
+import Products from "../pages/products/products";
+import ProductDetails from "../pages/productDetails/productDetails";
 
 /* ─── Lazy-loaded pages ─────────────────────────────────────────────────── */
 const Login = lazy(() => import("../pages/auth/Login"));
@@ -51,7 +53,6 @@ const AppRouter: React.FC = () => {
               </>
             }
           />
-
           {/* Info */}
           <Route
             path="/faq"
@@ -73,7 +74,26 @@ const AppRouter: React.FC = () => {
               </>
             }
           />
-
+          <Route
+            path="/Products/:category?"
+            element={
+              <>
+                <Header />
+                <Products />
+                <Footer />
+              </>
+            }
+          />{" "}
+          <Route
+            path="/Product/:id"
+            element={
+              <>
+                <Header />
+                <ProductDetails />
+                <Footer />
+              </>
+            }
+          />
           {/* Catch-all → redirect to login for now */}
           <Route
             path="*"

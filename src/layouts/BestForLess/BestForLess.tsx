@@ -35,7 +35,7 @@ const BestForLess: React.FC = () => {
             <p className="text-muted mb-0">Popular in your city</p>
           </div>
           <div>
-            <a href="#" className="btn btn-view-all btn-view-all-large">
+            <a href="#" className="btn btn-view-all btn-view-all-large ">
               View All
             </a>
           </div>

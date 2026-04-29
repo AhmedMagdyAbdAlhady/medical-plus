@@ -1,0 +1,13 @@
+/* Hero Section */
+.TitlePage {
+  background-color: #26c6da;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.TitlePage .separator {
+  width: 100px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+}

@@ -1,0 +1,9 @@
+/* Breadcrumb */
+:global(.breadcrumb-item) a {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+:global(.breadcrumb-item.active) {
+  color: #0277bd !important;
+}
