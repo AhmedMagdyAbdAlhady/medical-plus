@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import type { BreadcrumbsProps } from "../../types/Breadcrumbtypes";
-import styles from "./Breadcrumb.module.css";
 
 /**
  * Breadcrumb Component

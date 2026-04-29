@@ -2,8 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import cardStyles from "./card.module.css";
-import { Navigate, useNavigate } from "react-router-dom";
-import { use } from "react";
+import {  useNavigate } from "react-router-dom";
 
 interface CardProps {
   page?: "home" | "product";

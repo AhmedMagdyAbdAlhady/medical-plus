@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from "react";
 
 // Data and Types
 import { AllProducts, Allcategory } from "../../api/data";
-import type { Product } from "../../types/products.types";
+// import type { Product } from "../../types/products.types";
 
 import style from "./products.module.css";
 // Components
@@ -18,7 +18,7 @@ const Products = () => {
   // 1. States
   const [selectedSubs, setSelectedSubs] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<string>("default");
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const searchQuery :string= "";
 
   // 2. Get active category data
   const activeCategory = useMemo(() => {
