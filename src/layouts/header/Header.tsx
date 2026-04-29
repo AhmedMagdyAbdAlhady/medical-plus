@@ -100,7 +100,7 @@ const Header: React.FC = () => {
                 "Medicines",
               ].map((item) => (
                 <li key={item} className="nav-item">
-                  <Link className="nav-link text-white py-2" to="/category">
+                  <Link className="nav-link text-white py-2" to={`/products/${item.toLowerCase()}`}>
                     {item}
                   </Link>
                 </li>

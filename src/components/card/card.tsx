@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 import cardStyles from "./card.module.css";
+import { Navigate, useNavigate } from "react-router-dom";
+import { use } from "react";
 
 interface CardProps {
   page?: "home" | "product";
@@ -23,14 +25,15 @@ const Card = ({
   page,
   id,
 }: CardProps) => {
+  const navigate  = useNavigate();
   return (
-    <div key={id} className="col-12 col-sm-12 col-md-6 col-lg-3">
+    <div key={id} role="button" className="col-12 col-sm-12 col-md-6 col-lg-3 "  >
       <div
         className={
           page == "home" ? cardStyles["home-card"] : cardStyles["product-card"]
         }
       >
-        <div className={cardStyles["product-image"]}>
+        <div className={cardStyles["product-image"]} onClick={()=> navigate(`/product/${id}`) }>
           <img src={imageSrc} alt={productName} />
         </div>
         <div
