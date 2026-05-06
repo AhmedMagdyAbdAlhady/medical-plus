@@ -1,11 +1,18 @@
 export interface Product {
-  id: number;
+    id: number;
   name: string;
+  brand: string;         
   category: string;
   subCategory: string;
   price: number;
   image: string;
-  discription: string; // لاحظت أنك كاتبها discription في الداتا
+  productRelated: number[]; 
+  generics: string;      
+  usedFor: string;       
+  howItWorks: string;    
+  precautions: string;   
+  sideEffects: string;   
+  discription: string;
 }
 export interface Category {
   id: number;

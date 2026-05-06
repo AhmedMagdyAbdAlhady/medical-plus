@@ -10,6 +10,8 @@ const Login = lazy(() => import("../pages/auth/Login"));
 const Signup = lazy(() => import("../pages/auth/Signup"));
 const FAQ = lazy(() => import("../pages/faq/FAQ"));
 const HOME = lazy(() => import("../pages/home/home"));
+import cart from './../pages/cart/cart';
+import Cart from "./../pages/cart/cart";
 
 /* ─── Loading fallback ──────────────────────────────────────────────────── */
 const PageSpinner: React.FC = () => (
@@ -90,6 +92,16 @@ const AppRouter: React.FC = () => {
               <>
                 <Header />
                 <ProductDetails />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <>
+                <Header />
+                <Cart />
                 <Footer />
               </>
             }

@@ -1,8 +1,9 @@
+import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-
+import { addToCart } from "../../store/cartSlice";
 import cardStyles from "./card.module.css";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
   page?: "home" | "product";
@@ -11,11 +12,9 @@ interface CardProps {
   imageSrc: string;
   price: number;
   category: string;
+  multiplyCard?: number;
 }
-function addToCart(productId: number) {
-  // Implement the logic to add the product to the cart
-  console.log(`Product added to cart: ${productId}`);
-}
+
 const Card = ({
   productName,
   imageSrc,
@@ -23,18 +22,34 @@ const Card = ({
   category,
   page,
   id,
+  multiplyCard = 3, // القيمة الافتراضية 3 إذا لم يتم تمرير شيء
 }: CardProps) => {
-  const navigate  = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const addToCartHandler = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    dispatch(addToCart({ id, qty: 1 }));
+    alert("Product added to cart !");
+  };
+
   return (
-    <div key={id} role="button" className="col-12 col-sm-12 col-md-6 col-lg-3 "  >
+    <div
+      role="button"
+      className={`col-12 col-sm-12 col-md-6 col-lg-${multiplyCard}`}
+    >
       <div
         className={
-          page == "home" ? cardStyles["home-card"] : cardStyles["product-card"]
+          page === "home" ? cardStyles["home-card"] : cardStyles["product-card"]
         }
       >
-        <div className={cardStyles["product-image"]} onClick={()=> navigate(`/product/${id}`) }>
+        <div
+          className={cardStyles["product-image"]}
+          onClick={() => navigate(`/product/${id}`)}
+        >
           <img src={imageSrc} alt={productName} />
         </div>
+
         <div
           className={`${cardStyles["product-info"]} d-flex flex-column justify-content-between`}
         >
@@ -42,15 +57,16 @@ const Card = ({
             <p className={cardStyles["product-category"]}>{category}</p>
             <h6 className={cardStyles["product-name"]}>{productName}</h6>
           </div>
+
           <p className={cardStyles["product-price"]}>PKR {price.toFixed(2)}</p>
+
           <button
             className={cardStyles["btn-add-cart"]}
-            onClick={() => addToCart(id)}
+            onClick={(e) => {
+              addToCartHandler(e);
+            }}
           >
-            <FontAwesomeIcon
-              className={cardStyles["fa-solid fa-cart-shopping"]}
-              icon={faCartShopping}
-            />
+            <FontAwesomeIcon icon={faCartShopping} />
           </button>
         </div>
       </div>

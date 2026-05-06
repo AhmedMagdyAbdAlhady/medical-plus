@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { AllProducts } from "../../api/data";
 import TitlePage from "../../layouts/TitlePage/TitlePage";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
-import Card from "../../components/card/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import RelatedProducts from "../../layouts/relatedProducts/relatedproducts";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -110,7 +110,7 @@ const ProductDetails = () => {
         </div>
 
         {/* Related Products Section */}
-        <section className="related-products py-5 bg-white">
+        {/* <section className="related-products py-5 bg-white">
           <div className="container">
             <div className="row">
               <div className="col-12 d-flex align-items-center justify-content-center mb-4">
@@ -130,7 +130,8 @@ const ProductDetails = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
+        <RelatedProducts items={relatedProducts} />
       </div>
     </>
   );

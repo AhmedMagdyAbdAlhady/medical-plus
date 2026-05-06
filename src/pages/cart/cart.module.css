@@ -1,0 +1,153 @@
+.cardContent {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f8f9fa;
+}
+
+.cardItems {
+  padding: 25px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.cardItem {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.2s;
+}
+
+.cardItem:last-child {
+  border-bottom: none;
+}
+
+.cardItem img {
+  max-height: 80px;
+  width: 100%;
+  object-fit: contain;
+  background-color: #f1f3f5;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.cardItem h6 {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.buttons .removeBtn {
+  border: 1px solid #ff4d4f;
+  color: #ff4d4f;
+  font-size: 12px;
+  width: 85px;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+.buttons .removeBtn:hover {
+  color: white;
+  background-color: #ff4d4f;
+}
+
+.buttons .saveBtn {
+  border: 1px solid #007bff;
+  color: #007bff;
+  font-size: 12px;
+  width: 110px;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.3s;
+}
+
+.buttons .saveBtn:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.quantity span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+}
+
+.cardButtons .backBtn {
+  border: 1px solid #ddd;
+  color: #555;
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.cardButtons .backBtn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Order Summary */
+.orderSummary .priceDetails {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.type {
+  font-size: 14px;
+  color: #777;
+}
+
+.amount {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.totalAmount {
+  border-top: 2px solid #f1f1f1;
+  padding-top: 15px;
+  color: #184363;
+}
+
+/* Features */
+.features {
+  padding: 40px 0;
+  background: #fff;
+  border-top: 1px solid #eee;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature img {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: #eef2f7;
+  border-radius: 12px;
+}
+
+.feature h6 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.feature p {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
