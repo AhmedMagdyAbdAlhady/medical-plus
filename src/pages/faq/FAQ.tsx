@@ -12,7 +12,8 @@ const FAQ: React.FC = () => {
     email: "",
     subject: "",
     message: "",
-  });
+  }); 
+  
 
   const [errors, setErrors] = useState<ContactErrors>({});
   const [submitted, setSubmitted] = useState(false);

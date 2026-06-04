@@ -131,7 +131,7 @@ const ProductDetails = () => {
             </div>
           </div>
         </section> */}
-        <RelatedProducts items={relatedProducts} />
+        <RelatedProducts  items={relatedProducts} />
       </div>
     </>
   );

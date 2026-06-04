@@ -4,6 +4,8 @@ import bgPolygon from "../../images/bg-polygon 1.png";
 import "../../styles/global.css";
 import "./footer.module.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-light-footer pt-5 position-relative footer-offset">
@@ -14,7 +16,7 @@ const Footer: React.FC = () => {
         aria-hidden="true"
         className="position-absolute bottom-0 start-0 d-none d-lg-block footer-polygon-bg"
       />
-
+``
       {/* ── Newsletter (floating overlap) ── */}
       <div className="container position-relative z-1 newsletter-wrapper">
         <div className="bg-white rounded-4 shadow p-4 p-lg-5 text-center mx-auto newsletter-card">
@@ -64,28 +66,28 @@ const Footer: React.FC = () => {
                 className="btn btn-dark rounded-circle btn-sm me-1"
                 aria-label="Facebook"
               >
-                <i className="fab fa-facebook-f"></i>
+                <FontAwesomeIcon icon={faFacebookF} />
               </a>
               <a
                 href="#"
                 className="btn btn-dark rounded-circle btn-sm me-1"
                 aria-label="Instagram"
               >
-                <i className="fab fa-instagram"></i>
+                <FontAwesomeIcon icon={faInstagram} />
               </a>
               <a
                 href="#"
                 className="btn btn-dark rounded-circle btn-sm me-1"
                 aria-label="LinkedIn"
               >
-                <i className="fab fa-linkedin-in"></i>
+                <FontAwesomeIcon icon={faLinkedinIn} />
               </a>
               <a
                 href="#"
                 className="btn btn-dark rounded-circle btn-sm me-1"
                 aria-label="Twitter / X"
               >
-                <i className="fab fa-twitter"></i>
+                <FontAwesomeIcon icon={faTwitter} />
               </a>
             </div>
           </div>
@@ -114,14 +116,14 @@ const Footer: React.FC = () => {
             <h5 className="fw-bold text-dark-blue mb-3">Our Policies</h5>
             <ul className="list-unstyled text-muted small lh-lg">
               {[
-                "Refund Policy",
-                "Shipping Terms",
-                "Privacy Policy",
-                "Terms & Conditions",
+                {id: 1, name:"Refund Policy" , link:"#refund"},
+                {id: 2, name:"Shipping Terms", link:"#shipping"},
+                {id: 3, name:"Privacy Policy", link:"#privacy"},
+                {id: 4, name:"Terms & Conditions", link:"terms-And-Conditions"},
               ].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-decoration-none text-muted">
-                    {item}
+                <li key={item.id}>
+                  <a href={item.link} className="text-decoration-none text-muted">
+                    {item.name}
                   </a>
                 </li>
               ))}

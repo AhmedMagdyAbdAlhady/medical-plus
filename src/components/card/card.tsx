@@ -33,6 +33,14 @@ const Card = ({
     alert("Product added to cart !");
   };
 
+  const navigateToProduct = (id: number) => {
+    navigate(`/product/${id}`);
+     window.scrollTo({
+    top: 0,
+    behavior: "smooth" 
+  });
+    
+  };
   return (
     <div
       role="button"
@@ -45,7 +53,7 @@ const Card = ({
       >
         <div
           className={cardStyles["product-image"]}
-          onClick={() => navigate(`/product/${id}`)}
+          onClick={() => navigateToProduct(id)}
         >
           <img src={imageSrc} alt={productName} />
         </div>

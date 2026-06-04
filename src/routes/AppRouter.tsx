@@ -10,7 +10,7 @@ const Login = lazy(() => import("../pages/auth/Login"));
 const Signup = lazy(() => import("../pages/auth/Signup"));
 const FAQ = lazy(() => import("../pages/faq/FAQ"));
 const HOME = lazy(() => import("../pages/home/home"));
-import cart from './../pages/cart/cart';
+const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions/TermsAndConditions"));
 import Cart from "./../pages/cart/cart";
 
 /* ─── Loading fallback ──────────────────────────────────────────────────── */
@@ -102,6 +102,16 @@ const AppRouter: React.FC = () => {
               <>
                 <Header />
                 <Cart />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/terms-and-conditions"
+            element={
+              <>
+                <Header />
+                <TermsAndConditions />
                 <Footer />
               </>
             }
