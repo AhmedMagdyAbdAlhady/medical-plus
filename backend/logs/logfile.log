@@ -1,0 +1,29 @@
+{"level":"error","message":"Error Unhandled Promise Rejections Error Unhandled Promise Rejections","stack":"Error: Error Unhandled Promise Rejections\n    at Object.<anonymous> (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-37\\app.js:50:34)\n    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n    at Module.load (node:internal/modules/cjs/loader:1207:32)\n    at Module._load (node:internal/modules/cjs/loader:1023:12)\n    at Function.executecustomer EntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n    at node:internal/main/run_main_module:28:49"}
+{"level":"error","message":"parseTags is not defined parseTags is not defined","stack":"ReferenceError: parseTags is not defined\n    at exports.create (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\controllers\\productsController.js:28:7)\n    at Layer.handleRequest (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\router\\lib\\route.js:157:13)\n    at done (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\multer\\lib\\make-middleware.js:69:7)\n    at indicateDone (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\multer\\lib\\make-middleware.js:73:68)\n    at Multipart.<anonymous> (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\multer\\lib\\make-middleware.js:243:7)\n    at Multipart.emit (node:events:514:28)\n    at emitCloseNT (node:internal/streams/destroy:132:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)"}
+{"level":"error","message":"parseTags is not defined parseTags is not defined","stack":"ReferenceError: parseTags is not defined\n    at exports.create (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\controllers\\productsController.js:28:7)\n    at Layer.handleRequest (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\router\\lib\\layer.js:152:17)\n    at next (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\router\\lib\\route.js:157:13)\n    at done (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\multer\\lib\\make-middleware.js:69:7)\n    at indicateDone (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\multer\\lib\\make-middleware.js:73:68)\n    at Multipart.<anonymous> (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\multer\\lib\\make-middleware.js:243:7)\n    at Multipart.emit (node:events:514:28)\n    at emitCloseNT (node:internal/streams/destroy:132:10)\n    at process.processTicksAndRejections (node:internal/process/task_queues:81:21)"}
+{"level":"error","message":"path is not defined path is not defined","stack":"ReferenceError: path is not defined\n    at Object.<anonymous> (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\app.js:84:18)\n    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n    at Module.load (node:internal/modules/cjs/loader:1207:32)\n    at Module._load (node:internal/modules/cjs/loader:1023:12)\n    at Function.executecustomer EntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n    at node:internal/main/run_main_module:28:49"}
+{"level":"error","message":"path is not defined path is not defined","stack":"ReferenceError: path is not defined\n    at Object.<anonymous> (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\app.js:84:18)\n    at Module._compile (node:internal/modules/cjs/loader:1376:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1435:10)\n    at Module.load (node:internal/modules/cjs/loader:1207:32)\n    at Module._load (node:internal/modules/cjs/loader:1023:12)\n    at Function.executecustomer EntryPoint [as runMain] (node:internal/modules/run_main:135:12)\n    at node:internal/main/run_main_module:28:49"}
+{"level":"error","message":"Operation `products.find()` buffering timed out after 10000ms Operation `products.find()` buffering timed out after 10000ms","stack":"MongooseError: Operation `products.find()` buffering timed out after 10000ms\n    at Timeout._onTimeout (D:\\study\\men7a\\00-prepared\\04-patch-four\\group-two-g2\\lect-38\\node_modules\\mongoose\\lib\\drivers\\node-mongodb-native\\collection.js:131:25)\n    at listOnTimeout (node:internal/timers:573:17)\n    at process.processTimers (node:internal/timers:514:7)"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}
+{"level":"info","message":"connected to MongoDB"}

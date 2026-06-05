@@ -1,0 +1,4 @@
+{
+    "name": "MyApp  Default",
+    "jwtPrivateKey": "your_jwt_private_key_here"
+}

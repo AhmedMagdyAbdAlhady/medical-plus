@@ -1,0 +1,11 @@
+{
+    "name": "MyApp  Staging",
+    "version": "1.0.0",
+    "description": "MyApp Staging Environment",
+    "env": "staging",
+    "port": 3000,
+    "mail": {
+        "host": "smtp.stagingmail.com",
+        "port": 582
+    }
+}
