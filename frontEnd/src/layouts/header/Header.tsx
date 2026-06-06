@@ -1,19 +1,47 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import logoImg from "../../images/logo.png";
-import cartImg from "../../images/carty.png";
 import phoneImg from "../../images/phone-call.png";
 import "../../styles/global.css";
-import "./nav.module.css";
+import "./nav.css";
+import { selectCartCount } from "../../store/cartSlice";
+import { logout } from "../../store/authSlice";
+import type { RootState } from "../../store/store";
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [query, setQuery] = useState("");
+  const cartCount = useSelector(selectCartCount);
+  const { isAuthenticated, user } = useSelector((state: RootState) => state.auth);
+
+  const handleSearch = () => {
+    if (query.trim()) {
+      navigate(`/products?search=${encodeURIComponent(query.trim())}`);
+    } else {
+      navigate("/products");
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+
   return (
     <header className="bg-white">
       {/* ── Top Bar: Logo / Search / Actions ── */}
       <div className="container py-3">
         <div className="row align-items-center g-3">
           {/* Logo */}
-          <div className="col-6 col-lg-3">
+          <div className="col-6 col-lg-2">
             <Link to="/" className="d-block">
               <img src={logoImg} alt="SereneMeds Logo" className="img-fluid logo-main" />
             </Link>
@@ -22,29 +50,40 @@ const Header: React.FC = () => {
           {/* Search Bar */}
           <div className="col-12 col-lg-5 order-3 order-lg-2">
             <div className="input-group search-bar-custom">
-              <span className="input-group-text bg-light border-end-0 rounded-start-pill text-muted">
+              <span className="input-group-text bg-light border-end-0 rounded-start-pill text-muted" style={{ cursor: "pointer" }} onClick={handleSearch}>
                 <i className="fas fa-search"></i>
               </span>
               <input
                 type="text"
                 className="form-control bg-light border-start-0 border-end-0"
                 placeholder="Search for products"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
               />
-              <button className="btn btn-primary rounded-end-pill px-4" type="button">
+              <button className="btn btn-primary rounded-end-pill px-4" type="button" onClick={handleSearch}>
                 Search
               </button>
             </div>
           </div>
 
           {/* User Actions */}
-          <div className="col-6 col-lg-4 order-2 order-lg-3">
+          <div className="col-6 col-lg-5 order-2 order-lg-3">
             <div className="d-flex justify-content-end align-items-center gap-3">
               {/* Cart */}
               <Link
                 to="/cart"
                 className="position-relative text-dark me-2 d-flex align-items-center text-decoration-none"
               >
-                <img src={cartImg} alt="Cart" className="icon-cart" />
+                <i className="fas fa-shopping-cart fs-4 text-dark-blue"></i>
+                {cartCount > 0 && (
+                  <span 
+                    className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                    style={{ fontSize: "0.65rem", padding: "0.25em 0.5em" }}
+                  >
+                    {cartCount}
+                  </span>
+                )}
               </Link>
 
               {/* Language & Account */}
@@ -52,9 +91,33 @@ const Header: React.FC = () => {
                 <a href="#" className="text-decoration-none text-secondary fw-bold text-sm">
                   EN <i className="fas fa-chevron-down small"></i>
                 </a>
-                <Link to="/login" className="text-decoration-none text-primary fw-medium">
-                  <i className="far fa-user me-1"></i> My Account
-                </Link>
+                
+                {isAuthenticated ? (
+                  <>
+                    <span className="text-dark small fw-semibold">
+                      Hi, {user?.name.split(" ")[0]}
+                    </span>
+                    <button 
+                      onClick={handleLogout} 
+                      className="btn btn-link text-decoration-none text-danger fw-medium p-0 border-0 bg-transparent"
+                    >
+                      <i className="fas fa-sign-out-alt me-1"></i> Logout
+                    </button>
+                  </>
+                ) : (
+                  <Link to="/login" className="text-decoration-none text-primary fw-medium">
+                    <i className="far fa-user me-1"></i> My Account
+                  </Link>
+                )}
+
+                {isAuthenticated && user?.role === "admin" && (
+                  <>
+                    <span className="text-muted">|</span>
+                    <Link to="/dashboard" className="text-decoration-none text-success fw-medium">
+                      <i className="fas fa-chart-line me-1"></i> Dashboard
+                    </Link>
+                  </>
+                )}
               </div>
 
               {/* Support (desktop only) */}
@@ -106,12 +169,12 @@ const Header: React.FC = () => {
                 </li>
               ))}
               <li className="nav-item">
-                <Link className="nav-link text-white py-2" to="/category">
+                <Link className="nav-link text-white py-2" to="/products">
                   <i className="fas fa-asterisk me-1"></i> Shop By Brands
                 </Link>
               </li>
               <li className="nav-item border-0">
-                <Link className="nav-link text-white py-2" to="/category">
+                <Link className="nav-link text-white py-2" to="/products">
                   <i className="fas fa-tag me-1"></i> Offers
                 </Link>
               </li>

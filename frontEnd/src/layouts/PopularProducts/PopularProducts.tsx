@@ -1,99 +1,72 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../../components/card/card";
-import style   from "./PopularProducts.module.css";
-import"./PopularProducts.css";
-// 2. تنظيم البيانات في كائنات (Objects) لسهولة الإدارة
-const productsData = {
-  supplements: [
-    {
-      id: 1,
-      name: "Vitamin Complex 60 Tabs",
-      category: "Supplements",
-      price: 1250.00,
-      image: "/images/product1.webp",
-    },
-    {
-      id: 2,
-      name: "Omega-3 1000mg",
-      category: "Supplements",
-      price:  890.00,
-      image: "/images/product2.webp",
-    },
-     {
-      id: 3,
-      name: "Vitamin Complex 60 Tabs",
-      category: "Supplements",
-      price: 1250.00,
-      image: "/images/product1.webp",
-    },
-    {
-      id: 4,
-      name: "Omega-3 1000mg",
-      category: "Supplements",
-      price:  890.00,
-      image: "/images/product2.webp",
-    },
-  ],
-  medicines: [
-    {
-      id: 7,
-      name: "Panadol Extra 500mg",
-      category: "Headache & Migraine",
-      price: 30.00,
-      image: "/images/product2.webp",
-    },
-    {
-      id: 8,
-      name: "Brufen 400mg Tablets",
-      category: "Pain Relief",
-      price:  45.00,
-      image: "/images/product3.webp",
-    },
-     {
-      id: 9,
-      name: "Vitamin Complex 60 Tabs",
-      category: "Supplements",
-      price: 1250.00,
-      image: "/images/product1.webp",
-    },
-    {
-      id: 10,
-      name: "Omega-3 1000mg",
-      category: "Supplements",
-      price:  890.00,
-      image: "/images/product2.webp",
-    },
-  ],
-  herbs: [
-    {
-      id: 13,
-      name: "Pure Ashwagandha Powder",
-      category: "Herbs",
-      price:  450.00,
-      image: "/images/product4.webp",
-    },
-     {
-      id: 14,
-      name: "Vitamin Complex 60 Tabs",
-      category: "Supplements",
-      price: 1250.00,
-      image: "/images/product1.webp",
-    },
-    {
-      id: 15,
-      name: "Omega-3 1000mg",
-      category: "Supplements",
-      price:  890.00,
-      image: "/images/product2.webp",
-    },
-  ],
-};
+import api from "../../api/api";
+import { AllProducts } from "../../api/data";
+import style from "./PopularProducts.module.css";
+import "./PopularProducts.css";
 
 const PopularProducts: React.FC = () => {
-  // دالة مساعدة لرسم الكروت لمنع التكرار
-  const renderProductCards = (categoryKey: keyof typeof productsData) => {
-    return productsData[categoryKey].map((p) => (
-      <Card key={p.id} page="home" id={p.id} productName={p.name} category={p.category} price={p.price} imageSrc={p.image} />
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchPopularProducts = async () => {
+      try {
+        const res = await api.get("/products", { params: { isPopular: true } });
+        if (res.data && res.data.length > 0) {
+          setProducts(res.data);
+        } else {
+          setProducts(AllProducts.filter(p => p.isPopular));
+        }
+      } catch (err) {
+        console.error("Failed to fetch popular products, using fallback", err);
+        setProducts(AllProducts.filter(p => p.isPopular));
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchPopularProducts();
+  }, []);
+
+  // Filter products dynamically
+  const supplements = products.filter(p => 
+    p.category === "Nutrition Supplements" || 
+    p.category === "Sports Nutrition" || 
+    p.subCategory === "Supplements" || 
+    p.subCategory === "Vitamins"
+  );
+
+  const medicines = products.filter(p => 
+    p.category === "Medicines" || 
+    p.category === "Personal Care" || 
+    p.subCategory === "Pain Relief" || 
+    p.subCategory === "Cold Relief" || 
+    p.subCategory === "Antibiotics"
+  );
+
+  const herbs = products.filter(p => 
+    p.category === "Herbs" || 
+    p.subCategory === "Herbal Supplements"
+  );
+
+  const renderProductCards = (list: any[]) => {
+    if (list.length === 0) {
+      return (
+        <div className="col-12 text-center py-4 text-muted">
+          No products in this category.
+        </div>
+      );
+    }
+    return list.map((p) => (
+      <Card 
+        key={p.id || p._id} 
+        page="home" 
+        id={p.id} 
+        productName={p.name} 
+        category={p.category} 
+        price={p.price} 
+        imageSrc={p.image} 
+      />
     ));
   };
 
@@ -148,19 +121,29 @@ const PopularProducts: React.FC = () => {
 
         {/* Tabs Content */}
         <div className="tab-content" id="popularTabsContent">
-          <div className="tab-pane fade" id="supplements" role="tabpanel">
-            <div className="row g-3">{renderProductCards("supplements")}</div>
-          </div>
-          <div
-            className="tab-pane fade show active"
-            id="medicines"
-            role="tabpanel"
-          >
-            <div className="row g-3">{renderProductCards("medicines")}</div>
-          </div>
-          <div className="tab-pane fade" id="herbs" role="tabpanel">
-            <div className="row g-3">{renderProductCards("herbs")}</div>
-          </div>
+          {loading ? (
+            <div className="text-center py-5">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading products...</span>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="tab-pane fade" id="supplements" role="tabpanel">
+                <div className="row g-3">{renderProductCards(supplements)}</div>
+              </div>
+              <div
+                className="tab-pane fade show active"
+                id="medicines"
+                role="tabpanel"
+              >
+                <div className="row g-3">{renderProductCards(medicines)}</div>
+              </div>
+              <div className="tab-pane fade" id="herbs" role="tabpanel">
+                <div className="row g-3">{renderProductCards(herbs)}</div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </section>

@@ -5,6 +5,10 @@ import type { RootState } from './store'; // تأكد من أن المسار ي�
 interface CartItemSummary {
   id: number;
   qty: number;
+  name?: string;
+  price?: number;
+  image?: string;
+  category?: string;
 }
 
 interface CartState {
@@ -12,8 +16,17 @@ interface CartState {
 }
 
 // تحميل البيانات من LocalStorage عند البداية لضمان بقاء السلة بعد التحديث
+const loadCartFromStorage = (): CartItemSummary[] => {
+  try {
+    const saved = localStorage.getItem('cart');
+    return saved ? JSON.parse(saved) : [];
+  } catch {
+    return [];
+  }
+};
+
 const initialState: CartState = {
-  items: JSON.parse(localStorage.getItem('cart') || '[]'),
+  items: loadCartFromStorage(),
 };
 
 const cartSlice = createSlice({
@@ -52,8 +65,8 @@ const cartSlice = createSlice({
 // 1. حساب السعر الإجمالي (Total Price)
 export const selectCartTotal = (state: RootState) =>
   state.cart.items.reduce((total, item) => {
-    const product = AllProducts.find(p => p.id === item.id);
-    return total + (product ? product.price * item.qty : 0);
+    const price = item.price !== undefined ? item.price : (AllProducts.find(p => p.id === item.id)?.price || 0);
+    return total + (price * item.qty);
   }, 0);
 
 // 2. حساب عدد العناصر الكلي (Total Quantity) - مفيد لأيقونة الـ Navbar

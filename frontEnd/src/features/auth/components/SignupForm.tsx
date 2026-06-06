@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import type { SignupCredentials } from "../../../types/auth.types";
 import FormInput from "../../../components/FormInput";
 import {
-  isGmailEmail,
+  isValidEmail,
   isEgyptianPhone,
   isStrongPassword,
   isRequired,
 } from "../../../utils/validators";
+import { registerUser } from "../../../store/authSlice";
+import type { RootState, AppDispatch } from "../../../store/store";
 import styles from "./auth.module.css";
 
 const LOCATIONS = ["Cairo", "Alexandria", "Giza", "Mansoura", "Other"];
@@ -19,6 +23,10 @@ type SignupErrors = Partial<Record<keyof SignupCredentials, string>>;
  * Contains all form state and validation logic.
  */
 const SignupForm: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+  const { loading } = useSelector((state: RootState) => state.auth);
+
   const [credentials, setCredentials] = useState<SignupCredentials>({
     fullName: "",
     email: "",
@@ -43,11 +51,11 @@ const SignupForm: React.FC = () => {
       e.fullName = "Full name must be at least 3 characters.";
     }
 
-    // Email — must be @gmail.com
+    // Email
     if (!isRequired(data.email)) {
       e.email = "Email address is required.";
-    } else if (!isGmailEmail(data.email)) {
-      e.email = "Please enter a valid @gmail.com address.";
+    } else if (!isValidEmail(data.email)) {
+      e.email = "Please enter a valid email address.";
     }
 
     // Egyptian phone number
@@ -98,14 +106,30 @@ const SignupForm: React.FC = () => {
     if (submitted) setErrors(validate(updated));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     const validationErrors = validate(credentials);
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
-    // TODO: dispatch a signup thunk / call the auth API
-    console.log("Signup payload:", credentials);
+
+    try {
+      const resultAction = await dispatch(
+        registerUser({
+          name: credentials.fullName,
+          email: credentials.email,
+          password: credentials.password,
+        })
+      );
+      if (registerUser.fulfilled.match(resultAction)) {
+        toast.success("Account created successfully! Welcome to Medical Plus.");
+        navigate("/home");
+      } else {
+        toast.error(resultAction.payload as string || "Failed to register. Please try again.");
+      }
+    } catch (err: any) {
+      toast.error("An error occurred during registration.");
+    }
   };
 
   return (
@@ -240,8 +264,8 @@ const SignupForm: React.FC = () => {
           )}
         </div>
 
-        <button type="submit" className={`btn btn-primary ${styles.btnAuth} text-white`}>
-          Sign Up
+        <button type="submit" className={`btn btn-primary ${styles.btnAuth} text-white`} disabled={loading}>
+          {loading ? "Signing up..." : "Sign Up"}
         </button>
 
         <div className={styles.authLinks}>

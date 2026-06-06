@@ -1,9 +1,8 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useMemo, useEffect } from "react";
-
-// Data and Types
-import { AllProducts, Allcategory } from "../../api/data";
-// import type { Product } from "../../types/products.types";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts, fetchCategories } from "../../store/productSlice";
+import type { RootState, AppDispatch } from "../../store/store";
 
 import style from "./products.module.css";
 // Components
@@ -14,17 +13,34 @@ import Card from "../../components/card/card";
 const Products = () => {
   const { category } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useDispatch<AppDispatch>();
 
   // 1. States
   const [selectedSubs, setSelectedSubs] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<string>("default");
-  const searchQuery :string= "";
+
+  // Extract search query from URL: ?search=query
+  const searchQuery = useMemo(() => {
+    return new URLSearchParams(location.search).get("search") || "";
+  }, [location.search]);
+
+  // Load products and categories from store
+  const { products, categories, loading } = useSelector((state: RootState) => state.products);
+
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchProducts({ category, search: searchQuery }));
+  }, [dispatch, category, searchQuery]);
 
   // 2. Get active category data
   const activeCategory = useMemo(() => {
     if (!category) return null;
-    return Allcategory.find((c) => c.name === category) || null;
-  }, [category]);
+    return categories.find((c) => c.name.toLowerCase() === decodeURIComponent(category).toLowerCase()) || null;
+  }, [category, categories]);
 
   // Reset sub-categories when main category changes
   useEffect(() => {
@@ -45,23 +61,11 @@ const Products = () => {
 
   // 4. Logic: Filter and Sort Products
   const processedProducts = useMemo(() => {
-    let result = [...AllProducts];
-
-    // Filter by Main Category (URL)
-    if (category) {
-      result = result.filter((p) => p.category === category);
-    }
+    let result = [...products];
 
     // Filter by Sub-categories (Sidebar)
     if (selectedSubs.length > 0) {
       result = result.filter((p) => selectedSubs.includes(p.subCategory));
-    }
-
-    // Search Filter
-    if (searchQuery) {
-      result = result.filter((p) =>
-        p.name.toLowerCase().includes(searchQuery.toLowerCase()),
-      );
     }
 
     // Sorting Logic
@@ -72,7 +76,7 @@ const Products = () => {
     }
 
     return result;
-  }, [category, selectedSubs, sortBy, searchQuery]);
+  }, [products, selectedSubs, sortBy]);
 
   // 5. Breadcrumbs Items
   const breadcrumbItems = useMemo(() => {
@@ -118,7 +122,7 @@ const Products = () => {
               </div>
 
               <div className="accordion accordion-flush" id="categoryAccordion">
-                {Allcategory.map((cat) => (
+                {categories.map((cat) => (
                   <div className="accordion-item" key={cat.id}>
                     <h2 className="accordion-header">
                       <button
@@ -169,7 +173,7 @@ const Products = () => {
             {category && activeCategory && (
               // <!-- Category Description -->
             
-                <p className={style.description}>
+                <p className={style.categoryDescription}>
                   {activeCategory.description}
                 </p>
             )}
@@ -193,10 +197,16 @@ const Products = () => {
 
             {/* Product Grid */}
             <div className="row g-4">
-              {processedProducts.length > 0 ? (
+              {loading ? (
+                <div className="col-12 text-center py-5">
+                  <div className="spinner-border text-primary" role="status">
+                    <span className="visually-hidden">Loading products...</span>
+                  </div>
+                </div>
+              ) : processedProducts.length > 0 ? (
                 processedProducts.map((product) => (
                   <Card
-                    key={product.id}
+                    key={product.id || product._id}
                     id={product.id}
                     productName={product.name}
                     category={product.category}

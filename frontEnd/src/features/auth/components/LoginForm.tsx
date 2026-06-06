@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import type { LoginCredentials } from "../../../types/auth.types";
 import FormInput from "../../../components/FormInput";
-import { isGmailEmail, isRequired } from "../../../utils/validators";
+import { isValidEmail, isRequired } from "../../../utils/validators";
+import { loginUser } from "../../../store/authSlice";
+import type { RootState, AppDispatch } from "../../../store/store";
 import styles from "./auth.module.css";
 
 type LoginErrors = Partial<Record<keyof LoginCredentials, string>>;
@@ -12,6 +16,10 @@ type LoginErrors = Partial<Record<keyof LoginCredentials, string>>;
  * Contains all form state and validation logic.
  */
 const LoginForm: React.FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
+  const { loading } = useSelector((state: RootState) => state.auth);
+
   const [credentials, setCredentials] = useState<LoginCredentials>({
     email: "",
     password: "",
@@ -27,8 +35,8 @@ const LoginForm: React.FC = () => {
 
     if (!isRequired(data.email)) {
       e.email = "Email address is required.";
-    } else if (!isGmailEmail(data.email)) {
-      e.email = "Please enter a valid @gmail.com address.";
+    } else if (!isValidEmail(data.email)) {
+      e.email = "Please enter a valid email address.";
     }
 
     if (!isRequired(data.password)) {
@@ -51,14 +59,29 @@ const LoginForm: React.FC = () => {
     if (submitted) setErrors(validate(updated));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
     const validationErrors = validate(credentials);
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return; // stop if invalid
-    // TODO: dispatch a login thunk / call the auth API
-    console.log("Login payload:", credentials);
+
+    try {
+      const resultAction = await dispatch(loginUser(credentials));
+      if (loginUser.fulfilled.match(resultAction)) {
+        toast.success(`Welcome back, ${resultAction.payload.user.name}!`);
+        // If user is admin (pharmacy), redirect to dashboard, otherwise home
+        if (resultAction.payload.user.role === "admin") {
+          navigate("/dashboard");
+        } else {
+          navigate("/home");
+        }
+      } else {
+        toast.error(resultAction.payload as string || "Failed to login. Please try again.");
+      }
+    } catch (err: any) {
+      toast.error("An error occurred during login.");
+    }
   };
 
   return (
@@ -107,13 +130,17 @@ const LoginForm: React.FC = () => {
               Remember Me
             </label>
           </div>
-          <a href="#" className="text-decoration-none small text-primary fw-bold">
+          <button
+            type="button"
+            onClick={() => toast.info("Password recovery is disabled for the demo. Default credentials: user@medicalplus.com / password123")}
+            className="btn btn-link text-decoration-none small text-primary fw-bold p-0 border-0 bg-transparent align-baseline"
+          >
             Forgot Password?
-          </a>
+          </button>
         </div>
 
-        <button type="submit" className={`btn btn-primary ${styles.btnAuth} text-white`}>
-          Login
+        <button type="submit" className={`btn btn-primary ${styles.btnAuth} text-white`} disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
         </button>
 
         <div className={styles.authLinks}>

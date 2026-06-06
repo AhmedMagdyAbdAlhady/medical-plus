@@ -12,10 +12,12 @@ export interface Product {
   howItWorks: string;    
   precautions: string;   
   sideEffects: string;   
-  discription: string;
+  description: string;
 }
 export interface Category {
   id: number;
   name: string;
-  discription: string;
+  description: string;
+  icon: string;
+  subCategories: string[];
 }

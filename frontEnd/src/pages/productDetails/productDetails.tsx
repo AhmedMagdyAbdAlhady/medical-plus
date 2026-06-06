@@ -1,15 +1,19 @@
 import  { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/cartSlice";
 import { AllProducts } from "../../api/data";
 import TitlePage from "../../layouts/TitlePage/TitlePage";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import RelatedProducts from "../../layouts/relatedProducts/relatedproducts";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   // 1. Find Current Product
   const product = AllProducts.find((p) => p.id === Number(id));
@@ -51,7 +55,7 @@ const ProductDetails = () => {
                 Brand: <span>{product.brand || "N/A"}</span>
               </p>
               <span className="price-badge position-absolute top-0 end-0 px-4 border border-2">
-                Rs. {product.price}
+                EGP {product.price}
               </span>
             </div>
 
@@ -83,7 +87,17 @@ const ProductDetails = () => {
                 <span className="px-3">{quantity}</span>
                 <button   type="button" className="btn " onClick={() => setQuantity((q) => q + 1)}>+</button>
               </div>
-              <button className="btn btn-primary px-5">
+              <button className="btn btn-primary px-5" onClick={() => { 
+                dispatch(addToCart({ 
+                  id: product.id, 
+                  qty: quantity,
+                  name: product.name,
+                  price: product.price,
+                  image: product.image,
+                  category: product.category
+                })); 
+                toast.success('Product added to cart!'); 
+              }}>
                 <FontAwesomeIcon icon={faCartShopping} className="me-2" />
                 Add to Cart
               </button>
@@ -105,7 +119,7 @@ const ProductDetails = () => {
 
           <h6>Indication</h6>
           <ul>
-            <li>{product.discription}</li>
+            <li>{product.description}</li>
           </ul>
         </div>
 
@@ -131,7 +145,7 @@ const ProductDetails = () => {
             </div>
           </div>
         </section> */}
-        <RelatedProducts  items={relatedProducts} />
+        <RelatedProducts items={relatedProducts} />
       </div>
     </>
   );

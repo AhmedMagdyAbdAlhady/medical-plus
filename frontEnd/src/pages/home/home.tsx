@@ -113,7 +113,7 @@ const home = () => {
               <img
                 src={heroImage}
                 alt="Medical App Design"
-                className={"img-fluid" + style.heroImg}
+                className={`img-fluid ${style.heroImg}`}
               />
             </div>
           </div>
@@ -169,7 +169,7 @@ const home = () => {
                       {p.item.map((product) => {
                         return (
                           <Card
-                            key={product.id}
+                            key={`${p.number}-${product.id}`}
                             page="home"
                             id={product.id}
                             productName={product.name}

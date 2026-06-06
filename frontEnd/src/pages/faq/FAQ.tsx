@@ -5,6 +5,13 @@ import { isValidEmail, isRequired, minLength } from "../../utils/validators";
 import styles from "./faq.module.css";
 type ContactErrors = Partial<Record<keyof ContactFormData, string>>;
 
+const faqs = [
+  { question: "كيف أقوم بطلب الدواء عبر المنصة؟", answer: "يمكنك البحث عن الدواء وإضافته لعربة التسوق، أو بكل بساطة رفع صورة الروشتة الخاصة بك وسنقوم نحن بمعالجة الطلب من أقرب صيدلية لك." },
+  { question: "ما هي طرق الدفع المتاحة؟", answer: "نحن نقبل الدفع أونلاين عبر البطاقات البنكية، المحافظ الإلكترونية، وأيضاً الدفع نقداً عند الاستلام (Cash on Delivery)." },
+  { question: "كم يستغرق توصيل الطلب؟", answer: "يعتمد وقت التوصيل على أقرب صيدلية تقوم بمعالجة طلبك، وعادة ما يستغرق من 30 دقيقة إلى ساعتين كحد أقصى." },
+  { question: "هل جميع الصيدليات على المنصة موثوقة؟", answer: "نعم، جميع الصيدليات المشتركة في Medical Plus مرخصة ومعتمدة رسمياً لضمان سلامتك." }
+];
+
 const FAQ: React.FC = () => {
   /* ── Contact-form state ── */
   const [contactForm, setContactForm] = useState<ContactFormData>({
@@ -12,8 +19,7 @@ const FAQ: React.FC = () => {
     email: "",
     subject: "",
     message: "",
-  }); 
-  
+  });
 
   const [errors, setErrors] = useState<ContactErrors>({});
   const [submitted, setSubmitted] = useState(false);
@@ -106,6 +112,46 @@ const FAQ: React.FC = () => {
             <hr className="mt-2 text-muted-light" />
           </nav>
         </div>
+
+        {/* ── FAQ Accordion ── */}
+        <section className="faq-accordion-section py-5 bg-light" dir="rtl">
+          <div className="container">
+            <h2 className="text-center fw-bold text-dark-blue mb-4">الأسئلة الشائعة</h2>
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                <div className="accordion shadow-sm" id="faqAccordion">
+                  {faqs.map((faq, index) => (
+                    <div className="accordion-item" key={index}>
+                      <h2 className="accordion-header" id={`heading${index}`}>
+                        <button
+                          className="accordion-button collapsed fw-bold"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target={`#collapse${index}`}
+                          aria-expanded="false"
+                          aria-controls={`collapse${index}`}
+                        >
+                          {faq.question}
+                        </button>
+                      </h2>
+                      <div
+                        id={`collapse${index}`}
+                        className="accordion-collapse collapse"
+                        aria-labelledby={`heading${index}`}
+                        data-bs-parent="#faqAccordion"
+                      >
+                        <div className="accordion-body text-muted">
+                          {faq.answer}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── Contact Form ── */}
         <section className="contact-section py-5">
           <div className="container">

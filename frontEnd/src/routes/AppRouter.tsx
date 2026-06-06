@@ -5,13 +5,16 @@ import Footer from "../layouts/footer/Footer";
 import Products from "../pages/products/products";
 import ProductDetails from "../pages/productDetails/productDetails";
 
+import ProtectedRoute from "../components/ProtectedRoute";
+
 /* ─── Lazy-loaded pages ─────────────────────────────────────────────────── */
 const Login = lazy(() => import("../pages/auth/Login"));
 const Signup = lazy(() => import("../pages/auth/Signup"));
 const FAQ = lazy(() => import("../pages/faq/FAQ"));
 const HOME = lazy(() => import("../pages/home/home"));
+const Dashboard = lazy(() => import("../pages/dashboard/Dashboard"));
 const TermsAndConditions = lazy(() => import("../pages/TermsAndConditions/TermsAndConditions"));
-import Cart from "./../pages/cart/cart";
+const Cart = lazy(() => import("../pages/cart/cart"));
 
 /* ─── Loading fallback ──────────────────────────────────────────────────── */
 const PageSpinner: React.FC = () => (
@@ -85,7 +88,7 @@ const AppRouter: React.FC = () => {
                 <Footer />
               </>
             }
-          />{" "}
+          />
           <Route
             path="/Product/:id"
             element={
@@ -114,6 +117,18 @@ const AppRouter: React.FC = () => {
                 <TermsAndConditions />
                 <Footer />
               </>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute adminOnly>
+                <>
+                  <Header />
+                  <Dashboard />
+                  <Footer />
+                </>
+              </ProtectedRoute>
             }
           />
           {/* Catch-all → redirect to login for now */}

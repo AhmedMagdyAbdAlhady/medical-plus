@@ -1,31 +1,32 @@
+import React, { useState, useEffect } from "react";
 import Card from "../../components/card/card";
+import api from "../../api/api";
+import { AllProducts } from "../../api/data";
 import "./BestForLess.css";
-// تعريف النوع ليتطابق مع ما يحتاجه الـ Card
-interface ProductItem {
-  id: number;
-  productName: string;
-  imageSrc: string;
-  price: number;
-  category: string;
-}
-
-const bestProductsData: ProductItem[] = [
-  { id: 1, productName: "Betadine Mouthwash And Gargle 250 Ml", category: "Sore Throat, Mouthwash/Gargle", price: 49.60, imageSrc: "/images/product1.webp" },
-  { id: 2, productName: "Mucosolvan 30mg / 5ml Syrup 100 Ml", category: "Cough Remedies", price: 22.50, imageSrc: "/images/product2.webp" },
-  { id: 3, productName: "Panadol Migraine Tablets 24's", category: "Headache & Migraine", price: 29.50, imageSrc: "/images/product3.webp" },
-  { id: 4, productName: "Zyrtec 1mg/ML Oral Sol 75ml", category: "Allergy", price: 17.50, imageSrc: "/images/product4.webp" },
-  // تكرار البيانات لملء الصفوف كما في التصميم
-  { id: 5, productName: "Betadine Mouthwash And Gargle 250 Ml", category: "Sore Throat, Mouthwash/Gargle", price: 49.60, imageSrc: "/images/product1.webp" },
-  { id: 6, productName: "Mucosolvan 30mg / 5ml Syrup 100 Ml", category: "Cough Remedies", price: 22.50, imageSrc: "/images/product2.webp" },
-  { id: 7, productName: "Panadol Migraine Tablets 24's", category: "Headache & Migraine", price: 29.50, imageSrc: "/images/product3.webp" },
-  { id: 8, productName: "Zyrtec 1mg/ML Oral Sol 75ml", category: "Allergy", price: 17.50, imageSrc: "/images/product4.webp" },
-  { id: 9, productName: "Betadine Mouthwash And Gargle 250 Ml", category: "Sore Throat, Mouthwash/Gargle", price: 49.60, imageSrc: "/images/product1.webp" },
-  { id: 10, productName: "Mucosolvan 30mg / 5ml Syrup 100 Ml", category: "Cough Remedies", price: 22.50, imageSrc: "/images/product2.webp" },
-  { id: 11, productName: "Panadol Migraine Tablets 24's", category: "Headache & Migraine", price: 29.50, imageSrc: "/images/product3.webp" },
-  { id: 12, productName: "Zyrtec 1mg/ML Oral Sol 75ml", category: "Allergy", price: 17.50, imageSrc: "/images/product4.webp" },
-];
 
 const BestForLess: React.FC = () => {
+  const [products, setProducts] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBestProducts = async () => {
+      try {
+        const res = await api.get("/products", { params: { isBestForLess: true } });
+        if (res.data && res.data.length > 0) {
+          setProducts(res.data);
+        } else {
+          setProducts(AllProducts.filter(p => p.isBestForLess));
+        }
+      } catch (err) {
+        console.error("Failed to fetch best products, using fallback", err);
+        setProducts(AllProducts.filter(p => p.isBestForLess));
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBestProducts();
+  }, []);
+
   return (
     <section className="best-for-less py-5 bg-white">
       <div className="container">
@@ -35,24 +36,32 @@ const BestForLess: React.FC = () => {
             <p className="text-muted mb-0">Popular in your city</p>
           </div>
           <div>
-            <a href="#" className="btn btn-view-all btn-view-all-large ">
+            <a href="#" className="btn btn-view-all btn-view-all-large">
               View All
             </a>
           </div>
         </div>
 
         <div className="row g-4">
-          {bestProductsData.map((product) => (
-            <Card
-              key={product.id}
-              id={product.id}
-              productName={product.productName}
-              imageSrc={product.imageSrc}
-              price={product.price}
-              category={product.category}
-              page="home"
-            />
-          ))}
+          {loading ? (
+            <div className="col-12 text-center py-4">
+              <div className="spinner-border text-primary" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          ) : (
+            products.map((product) => (
+              <Card
+                key={product.id || product._id}
+                id={product.id}
+                productName={product.name}
+                imageSrc={product.image}
+                price={product.price}
+                category={product.category}
+                page="home"
+              />
+            ))
+          )}
         </div>
       </div>
     </section>

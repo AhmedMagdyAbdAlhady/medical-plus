@@ -6,7 +6,7 @@ import {
 
 import style from "./BrandSlideBar.module.css";
 const BrandSlideBar = () => {
-  let brand = [
+  const brand = [
     {
       number: 0,
       items: [
@@ -94,7 +94,7 @@ const BrandSlideBar = () => {
   return (
     <>
       {/* <!-- Start Brand/Logo Carousel--> */}
-      <section className={`"${style.logoSlider} py-4 bg-white"`}>
+      <section className={`${style.logoSlider} py-4 bg-white`}>
         <div className="container">
           <div className="logo-carousel-wrapper">
             <div
@@ -113,12 +113,14 @@ const BrandSlideBar = () => {
                       <div className={style.logoRow}>
                         {b.items.map((item) => {
                           return (
-                            <div className={style.logoItem}>
+                            <div key={item.id} className={style.logoItem}>
                               <img
                                 src={item.image}
                                 alt={item.name}
                                 className={style.logoImg}
                               />
+                              
+                              
                             </div>
                           );
                         })}

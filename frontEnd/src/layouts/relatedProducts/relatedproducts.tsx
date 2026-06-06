@@ -7,11 +7,11 @@ const relatedproducts = ({items}: {items: Product[]}) => {
   return (
     <section className="related-products py-5 bg-white">
       <div className="container">
-        <div className="row  ">
+        <div className="row">
           <div className="col-12 d-flex align-items-center justify-content-center mb-4">
             <h2 className="section-title">You May Also Like</h2>
           </div>
-          <div className="col-12 row g-4 align-items-center justify-content-center">
+          <div className="col-12 row g-4 justify-content-center">
             {items.map((item) => (
               <Card
               multiplyCard={2}

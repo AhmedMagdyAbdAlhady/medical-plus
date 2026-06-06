@@ -4,6 +4,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { addToCart } from "../../store/cartSlice";
 import cardStyles from "./card.module.css";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 interface CardProps {
   page?: "home" | "product";
@@ -29,10 +30,16 @@ const Card = ({
 
   const addToCartHandler = (e: React.MouseEvent) => {
     e.stopPropagation();
-    dispatch(addToCart({ id, qty: 1 }));
-    alert("Product added to cart !");
+    dispatch(addToCart({ 
+      id, 
+      qty: 1,
+      name: productName,
+      price: price,
+      image: imageSrc,
+      category: category
+    }));
+    toast.success("Product added to cart!");
   };
-
   const navigateToProduct = (id: number) => {
     navigate(`/product/${id}`);
      window.scrollTo({
@@ -66,7 +73,7 @@ const Card = ({
             <h6 className={cardStyles["product-name"]}>{productName}</h6>
           </div>
 
-          <p className={cardStyles["product-price"]}>PKR {price.toFixed(2)}</p>
+          <p className={cardStyles["product-price"]}>EGP {price.toFixed(2)}</p>
 
           <button
             className={cardStyles["btn-add-cart"]}
