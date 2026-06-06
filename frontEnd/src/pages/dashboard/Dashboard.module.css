@@ -1,0 +1,78 @@
+/* Premium Pharmacy Dashboard styles */
+
+.welcomeBanner {
+  background: linear-gradient(135deg, #0d2c54 0%, #1e40af 100%);
+  box-shadow: 0 4px 20px rgba(13, 44, 84, 0.15);
+}
+
+.statusDot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.statusOnline {
+  background-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+.statusOffline {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
+
+.tabBtn {
+  background-color: transparent;
+  color: #4b5563;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid transparent !important;
+}
+
+.tabBtn:hover {
+  background-color: #f3f4f6;
+  color: #0d2c54;
+}
+
+.activeTabBtn {
+  background-color: #0d2c54 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(13, 44, 84, 0.2);
+}
+
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom colors for stats boxes */
+:global(.bg-light-blue) {
+  background-color: #f0f7ff !important;
+  border: 1px solid #e0f2fe;
+}
+
+:global(.text-dark-blue) {
+  color: #0d2c54 !important;
+}
+
+:global(.bg-primary-blue) {
+  background: linear-gradient(180deg, #1e40af 0%, #0d2c54 100%);
+}
+
+/* Hover effects for charts */
+:global(.hover-opacity-80):hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+/* Custom scrollbars and tables spacing */
+:global(.table-responsive) {
+  scrollbar-width: thin;
+}
+
+:global(.table) th {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
