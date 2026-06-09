@@ -295,6 +295,7 @@ const Dashboard: React.FC = () => {
     0,
   );
   const totalOrdersCount = orders.length;
+  const pendingOrdersCount = orders.filter((o) => o.status === "Pending").length;
   const avgOrderValue =
     totalOrdersCount > 0
       ? orders.reduce((sum, o) => sum + o.totalAmount, 0) / totalOrdersCount
@@ -346,9 +347,14 @@ const Dashboard: React.FC = () => {
               >
                 <i className="fas fa-shopping-cart"></i>
                 <span className="fw-semibold">Orders</span>
-                <span className="badge bg-danger rounded-pill ms-auto">
-                  {orders.filter((o) => o.status === "Pending").length}
+                <span className="badge bg-primary rounded-pill ms-auto">
+                  {totalOrdersCount} Total
                 </span>
+                {pendingOrdersCount > 0 && (
+                  <span className="badge bg-danger rounded-pill">
+                    {pendingOrdersCount} Pending
+                  </span>
+                )}
               </button>
               <button
                 onClick={() => setActiveTab("inventory")}

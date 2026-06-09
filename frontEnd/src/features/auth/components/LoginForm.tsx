@@ -6,6 +6,7 @@ import type { LoginCredentials } from "../../../types/auth.types";
 import FormInput from "../../../components/FormInput";
 import { isValidEmail, isRequired } from "../../../utils/validators";
 import { loginUser } from "../../../store/authSlice";
+import { loadCartForCurrentUser } from "../../../store/cartSlice";
 import type { RootState, AppDispatch } from "../../../store/store";
 import styles from "./auth.module.css";
 
@@ -69,6 +70,7 @@ const LoginForm: React.FC = () => {
     try {
       const resultAction = await dispatch(loginUser(credentials));
       if (loginUser.fulfilled.match(resultAction)) {
+        dispatch(loadCartForCurrentUser());
         toast.success(`Welcome back, ${resultAction.payload.user.name}!`);
         // If user is admin (pharmacy), redirect to dashboard, otherwise home
         if (resultAction.payload.user.role === "admin") {

@@ -11,6 +11,7 @@ import {
   isRequired,
 } from "../../../utils/validators";
 import { registerUser } from "../../../store/authSlice";
+import { loadCartForCurrentUser } from "../../../store/cartSlice";
 import type { RootState, AppDispatch } from "../../../store/store";
 import styles from "./auth.module.css";
 
@@ -122,6 +123,7 @@ const SignupForm: React.FC = () => {
         })
       );
       if (registerUser.fulfilled.match(resultAction)) {
+        dispatch(loadCartForCurrentUser());
         toast.success("Account created successfully! Welcome to Medical Plus.");
         navigate("/home");
       } else {

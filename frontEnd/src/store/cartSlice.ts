@@ -15,14 +15,32 @@ interface CartState {
   items: CartItemSummary[];
 }
 
+const getCurrentCartKey = (): string => {
+  try {
+    const storedUser = localStorage.getItem('user');
+    if (!storedUser) return 'cart:guest';
+
+    const user = JSON.parse(storedUser);
+    const userKey = user?._id || user?.email;
+    return userKey ? `cart:${userKey}` : 'cart:guest';
+  } catch {
+    return 'cart:guest';
+  }
+};
+
 // تحميل البيانات من LocalStorage عند البداية لضمان بقاء السلة بعد التحديث
 const loadCartFromStorage = (): CartItemSummary[] => {
   try {
-    const saved = localStorage.getItem('cart');
+    const saved = localStorage.getItem(getCurrentCartKey());
     return saved ? JSON.parse(saved) : [];
   } catch {
     return [];
   }
+};
+
+const saveCartToStorage = (items: CartItemSummary[]) => {
+  localStorage.setItem(getCurrentCartKey(), JSON.stringify(items));
+  localStorage.removeItem('cart');
 };
 
 const initialState: CartState = {
@@ -40,22 +58,26 @@ const cartSlice = createSlice({
       } else {
         state.items.push(action.payload);
       }
-      localStorage.setItem('cart', JSON.stringify(state.items));
+      saveCartToStorage(state.items);
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter(item => item.id !== action.payload);
-      localStorage.setItem('cart', JSON.stringify(state.items));
+      saveCartToStorage(state.items);
     },
     updateQuantity: (state, action: PayloadAction<{ id: number; qty: number }>) => {
       const item = state.items.find(i => i.id === action.payload.id);
       if (item) {
         item.qty = action.payload.qty;
       }
-      localStorage.setItem('cart', JSON.stringify(state.items));
+      saveCartToStorage(state.items);
     },
     clearCart: (state) => {
       state.items = [];
+      localStorage.removeItem(getCurrentCartKey());
       localStorage.removeItem('cart');
+    },
+    loadCartForCurrentUser: (state) => {
+      state.items = loadCartFromStorage();
     },
   },
 });
@@ -76,5 +98,5 @@ export const selectCartCount = (state: RootState) =>
 // 3. جلب ملخص السلة
 export const selectCartItems = (state: RootState) => state.cart.items;
 
-export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity, clearCart, loadCartForCurrentUser } = cartSlice.actions;
 export default cartSlice.reducer;

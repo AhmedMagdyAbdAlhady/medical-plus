@@ -5,7 +5,7 @@ import logoImg from "../../images/logo.png";
 import phoneImg from "../../images/phone-call.png";
 import "../../styles/global.css";
 import "./nav.css";
-import { selectCartCount } from "../../store/cartSlice";
+import { loadCartForCurrentUser, selectCartCount } from "../../store/cartSlice";
 import { logout } from "../../store/authSlice";
 import type { RootState } from "../../store/store";
 
@@ -32,6 +32,7 @@ const Header: React.FC = () => {
 
   const handleLogout = () => {
     dispatch(logout());
+    dispatch(loadCartForCurrentUser());
     navigate("/login");
   };
 
